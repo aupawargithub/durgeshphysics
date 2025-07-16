@@ -376,7 +376,7 @@ const role = localStorage.getItem("role") || sessionStorage.getItem("role");
 
 if (!isLoggedIn || (role !== "student" && role !== "admin")){
 
-  window.location.href = "https://aupawargithub.github.io/Durgesh_Physics/";
+  window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
 } else {
   
   const welcome = document.getElementById("welcome");
@@ -397,7 +397,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   
   setTimeout(() => {
     if (window.location.pathname.includes("student02.html")) {
-      window.location.href = "https://aupawargithub.github.io/Durgesh_Physics/";
+      window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
     }
   }, 500);
 });
