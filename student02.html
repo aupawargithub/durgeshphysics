@@ -113,9 +113,38 @@
   }
 }
 
+.compact-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #283593, #64b5f6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  opacity: 0;
+	padding-right: 60px; 
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
 
-
-    .container {
+.compact-header.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.compact-title {
+  font-size: 24px;
+  font-weight: bold;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.container {
       max-width: 1000px;
       margin: 20px auto;
       padding: 20px;
@@ -305,7 +334,9 @@
     <button class="logout-btn" id="logoutBtn">Logout</button>
   </div>
 </div>
-
+<div id="compact-header" class="compact-header">
+  <span class="compact-title">DURGESH PHYSICS</span>
+</div>
 
   <div class="container">
     <div class="section">
@@ -406,6 +437,18 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
     const image = document.getElementById('profilePic');
     image.src = URL.createObjectURL(event.target.files[0]);
   }
+     const fullHeader = document.getElementById("full-header");
+const compactHeader = document.getElementById("compact-header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    compactHeader.classList.add("visible");
+    fullHeader.style.display = "none";
+  } else {
+    compactHeader.classList.remove("visible");
+    fullHeader.style.display = "flex"; // use flex because original header uses flex layout
+  }
+});
 </script>
 </body>
 </html>
