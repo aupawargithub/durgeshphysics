@@ -34,46 +34,55 @@ html, body {
   padding: 0;
 }
    
-  header {
+header {
+  background: linear-gradient(to right, #283593, #64b5f6);
+  color: #fff;
+  padding: 12px 16px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+
+.title-box h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.title-box .main-title {
+  font-weight: bold;
+}
+
+.title-box .subheading {
+  font-size: 1rem;
+  color: #e0f7fa;
+  
+}
+
+.header-bottom {
+  margin-top: 8px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  background: linear-gradient(to right, #283593, #64b5f6);
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-// border-bottom-left-radius: 10px;
- // border-bottom-right-radius: 10px;
-  color: #fff;
-     position: relative; 
+  align-items: flex-end;
 }
 
-
-header h1 {
-  margin: 0;
-  font-size: 1.6rem;
-  line-height: 1.3;
-  color: #fff;
+/* Left info */
+.left-info {
+  text-align: left;
+  font-size: 0.85rem;
 }
 
-header h1 .main-title {
-  font-weight: bold;
-  display: block;
+.left-info p {
+  margin: 2px 0;
 }
-
-header h1 .subheading {
-  font-size: 1rem;
-  color: #e0f7fa; 
-}
-
-
-header .user-info,
-header #welcome {
-  font-size: 0.9rem;
-  margin-top: 4px;
-}
-
+    
     #logoutBtn {
       background: var(--danger);
       color: white;
@@ -93,7 +102,25 @@ header #welcome {
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
       transform: translateY(-3px);
     }
+@media (max-width: 480px) {
+  .title-box h1 {
+    font-size: 1.4rem;
+  }
 
+  .title-box .subheading {
+    font-size: 1.0rem;
+   
+  }
+
+  .left-info {
+    font-size: 0.75rem;
+  }
+
+  #logoutBtn {
+    padding: 6px 11px;
+    font-size: 0.9rem;
+  }
+}
    
 .dashboard {
   display: grid;
@@ -308,38 +335,40 @@ header #welcome {
   </style>
 </head>
 <body>
-
-  <header>
+<header>
   <div class="title-box">
     <h1>
       <span class="main-title">DURGESH PHYSICS</span><br>
-      <span class="subheading"> Admin Dashboard</span>
+      <span class="subheading">Admin Dashboard</span>
     </h1>
-    <p id="welcome"></p>
-    <p class="user-info">User: Durgesh Pawar</p>
   </div>
-  <button id="logoutBtn">Logout</button>
+  <div class="header-bottom">
+    <div class="left-info">
+      <p id="welcome">Logged in as admin: durgeshpawar883@gmail.com</p>
+      <p class="user-info">User: Durgesh Pawar</p>
+    </div>
+    <button id="logoutBtn">Logout</button>
+  </div>
 </header>
-
-
+  
   <div class="dashboard">
-   <!-- Student List -->
+   
 <div class="card">
   <h2>Student List</h2>
   <div class="student-grid">
-    <div class="student"><span class="roll">DPC133</span><span class="name">Rakesh Thorat</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll"><a href="student.html" class="roll-link">DPC134</a></span><span class="name">Abhishek Jadhav</span><span class="fee pending">Pending</span></div>
-    <div class="student"><span class="roll">DPC135</span><span class="name">Anjali Verma</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll">DPC136</span><span class="name">Sachin Kamat</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll">DPC137</span><span class="name">Kavita Jha</span><span class="fee pending">Pending</span></div>
-    <div class="student"><span class="roll">DPC138</span><span class="name">Sanjay Magar</span><span class="fee pending">Pending</span></div>
-    <div class="student"><span class="roll">DPC139</span><span class="name">Ramnath Gadhe</span><span class="fee">Paid</span></div>
-    <div class="student"> <span class="roll"><a href="student02.html" class="roll-link">DPC140</a></span><span class="name">Neeta More</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll">DPC141</span><span class="name">Pratima Sahane</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll">DPC142</span><span class="name">Harish Mane</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll">DPC143</span><span class="name">Sagar Jadhav</span><span class="fee pending">Pending</span></div>
-    <div class="student"><span class="roll">DPC144</span><span class="name">Akash Munde</span><span class="fee">Paid</span></div>
-    <div class="student"><span class="roll">DPC145</span><span class="name">Pooja Kadam</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP133</span><span class="name">Rakesh Thorat</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll"><a href="student.html" class="roll-link">DP134</a></span><span class="name">Abhishek Jadhav</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP135</span><span class="name">Anjali Verma</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP136</span><span class="name">Sachin Kamat</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP137</span><span class="name">Kavita Jha</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP138</span><span class="name">Sanjay Magar</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP139</span><span class="name">Ramnath Gadhe</span><span class="fee">Paid</span></div>
+    <div class="student"> <span class="roll"><a href="student02.html" class="roll-link">DP140</a></span><span class="name">Neeta More</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP141</span><span class="name">Pratima Sahane</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP142</span><span class="name">Harish Mane</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP143</span><span class="name">Sagar Jadhav</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP144</span><span class="name">Akash Munde</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP145</span><span class="name">Pooja Kadam</span><span class="fee">Paid</span></div>
   </div>
 </div>
 
