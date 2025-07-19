@@ -40,10 +40,11 @@ flex-wrap: nowrap;
     .logo {
       width: 50px;
       height: 50px;
-      border-radius: 8px;
+      border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 	    flex-shrink: 0;
+	     border: 2px solid white;
     }
 	  .header-text {
   display: flex;
@@ -98,7 +99,8 @@ flex-wrap: nowrap;
 .compact-header .logo {
  width: 40px;
       height: 40px;
-      border-radius: 8px;
+      border-radius: 12px;
+	 border: 2px solid white;
 margin-right: 13px;
   width: auto; 
   object-fit: contain; 
@@ -1142,7 +1144,8 @@ font-weight: 200;
   margin: 0 auto 20px auto;
   width: 70px;              
   height: 70px;             
-  border-radius: 12px;      
+  border-radius: 12px;  
+	 border: 2px solid white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
   object-fit: cover;        
   //background-color: white;  
