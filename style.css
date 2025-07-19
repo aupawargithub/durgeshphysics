@@ -52,7 +52,6 @@ flex-wrap: nowrap;
   min-width: 0;
   overflow: hidden;
  flex-grow: 1;
-  padding-left: 4px;
 }
 
     .header-title {
@@ -414,6 +413,7 @@ border-bottom: 1px solid #cfd8dc;
     flex-grow: 1;
     min-width: 0;
     overflow: hidden;
+  padding-left: 8px;
   }
 
   .header-title {
