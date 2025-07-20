@@ -24,18 +24,15 @@
     }
 
 header {
-  
   background: linear-gradient(to right, #283593, #64b5f6);
   color: #fff;
   padding: 12px 16px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   margin-bottom: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center; 
-   z-index: 999;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 999;
 }
 
 
@@ -53,10 +50,7 @@ header {
 .title-box .subheading {
   font-size: 1rem;
   color: #e0f7fa;
-  
-}
-
-
+  }
 .header-bottom {
   margin-top: 8px;
   width: 100%;
@@ -289,7 +283,7 @@ header {
   gap: 12px;
 }
 
-/* Mobile responsive tweak */
+
 @media (max-width: 768px) {
   .profile-row {
     flex-direction: column;
@@ -334,7 +328,7 @@ header {
     <div class="section">
       <h2>Personal Information</h2>
       <div class="profile-row">
-    <!-- Profile Picture Upload -->
+   
     <div class="profile-upload">
     
         <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="profilePic" alt="Profile Photo">
@@ -357,19 +351,18 @@ header {
     <div class="section">
       <h2>Monthly Marks</h2>
       <div class="info-grid">
-        <div class="info-item"><strong>April:</strong> 75/100</div>
         <div class="info-item"><strong>May:</strong> 79/100</div>
         <div class="info-item"><strong>June:</strong> 88/100</div>
-        <!-- Add more months as needed -->
+	<div class="info-item"><strong>July:</strong> 83/100</div>
       </div>
     </div>
 
     <div class="section">
       <h2>Attendance</h2>
       <div class="info-grid">
-        <div class="info-item"><strong>April:</strong> 90%</div>
-        <div class="info-item"><strong>May:</strong> 85%</div>
+       <div class="info-item"><strong>May:</strong> 85%</div>
         <div class="info-item"><strong>June:</strong> 92%</div>
+        <div class="info-item"><strong>July:</strong> 90%</div>
       </div>
     </div>
 
