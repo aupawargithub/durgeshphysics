@@ -565,6 +565,7 @@ border-bottom: 1px solid #cfd8dc;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
+    margin-left: 12px;
   }
 
   .compact-title {
@@ -611,6 +612,7 @@ border-bottom: 1px solid #cfd8dc;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
+    margin-left: 12px;
   }
 
   .compact-title {
