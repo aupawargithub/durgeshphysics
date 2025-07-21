@@ -1,10 +1,12 @@
 
   
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('Service Worker registered', reg))
-      .catch(err => console.error('Service Worker failed', err));
-  }
+ if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('✅ Service Worker registered:', reg.scope))
+      .catch(err => console.error('❌ Service Worker registration failed:', err));
+  });
+}
 
  function toggleMenu(source = 'main') {
   const navLinks = document.getElementById("navLinks");
@@ -100,10 +102,12 @@ function handleContactForm(event) {
   });
 
   if (!isValid) {
-    return; // prevent submission
+    return; 
   }
 
-  const toast = document.getElementById("toast");
+   const toast = document.getElementById("toast");
+
+if (toast) {
   toast.style.display = "block";
   toast.classList.remove("fade-active");
   void toast.offsetWidth;
@@ -112,6 +116,8 @@ function handleContactForm(event) {
   setTimeout(() => {
     toast.style.display = "none";
   }, 3000);
+
+}
 
   form.reset();
  form.querySelectorAll('.custom-select').forEach(select => {
@@ -128,8 +134,13 @@ function handleContactForm(event) {
   });
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
- const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  if (!scrollToTopBtn) {
+    console.warn("Element with ID 'scrollToTopBtn' not found.");
+    return;
+  }
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
@@ -146,6 +157,7 @@ function handleContactForm(event) {
       behavior: "smooth"
     });
   });
+});
 	document.querySelectorAll('#courses .tab-item').forEach(tab => {
     tab.addEventListener('click', () => {
       
@@ -158,17 +170,30 @@ function handleContactForm(event) {
       document.getElementById(tab.dataset.target).classList.add('active');
     });
   });
-	const fullHeader = document.getElementById("full-header");
-const compactHeader = document.getElementById("compact-header");
+	document.addEventListener("DOMContentLoaded", () => {
+  const fullHeader = document.getElementById("full-header");
+  const compactHeader = document.getElementById("compact-header");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    compactHeader.classList.add("visible");
-    fullHeader.style.display = "none";
-  } else {
-    compactHeader.classList.remove("visible");
-    fullHeader.style.display = "flex"; 
+  if (!fullHeader) {
+    console.warn("Missing element: #full-header");
   }
+  if (!compactHeader) {
+    console.warn("Missing element: #compact-header");
+  }
+
+  if (!fullHeader || !compactHeader) {
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      compactHeader.classList.add("visible");
+      fullHeader.style.display = "none";
+    } else {
+      compactHeader.classList.remove("visible");
+      fullHeader.style.display = "flex";
+    }
+  });
 });
 const swiper = new Swiper(".myHeroSwiper", {
   loop: true,
