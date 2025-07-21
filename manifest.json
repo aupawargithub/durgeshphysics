@@ -1,8 +1,9 @@
 {
   "name": "DURGESH PHYSICS",
-  "short_name": "DurgeshPhysics",
-  "start_url": "/index.html",
+  "short_name": "DPHYSICS",
+  "start_url":  "/durgeshphysics/index.html",
   "display": "standalone",
+  "scope": "/durgeshphysics/",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
   "orientation": "portrait",
