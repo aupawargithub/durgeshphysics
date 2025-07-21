@@ -8,8 +8,15 @@
 <meta http-equiv="Expires" content="0" />
 
   <title>DURGESH PHYSICS - Admin Dashboard</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
-  <link rel="apple-touch-icon" href="logoo.png">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DurgeshPhysics">
+
   <style>
     :root {
       --primary: #007bff;
@@ -341,7 +348,7 @@ header {
 </head>
 <body>
 <header>
-  <div class="title-box">
+  <div id= "full-header" class="title-box">
     <h1>
       <span class="main-title">DURGESH PHYSICS</span><br>
       <span class="subheading">Admin Dashboard</span>
@@ -617,18 +624,32 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
       }
     });
   };
+ document.addEventListener("DOMContentLoaded", () => {
   const fullHeader = document.getElementById("full-header");
-const compactHeader = document.getElementById("compact-header");
+  const compactHeader = document.getElementById("compact-header");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    compactHeader.classList.add("visible");
-    fullHeader.style.display = "none";
-  } else {
-    compactHeader.classList.remove("visible");
-    fullHeader.style.display = "flex"; // use flex because original header uses flex layout
+  if (!fullHeader) {
+    console.warn("Missing element: #full-header");
   }
+  if (!compactHeader) {
+    console.warn("Missing element: #compact-header");
+  }
+
+  if (!fullHeader || !compactHeader) {
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      compactHeader.classList.add("visible");
+      fullHeader.style.display = "none";
+    } else {
+      compactHeader.classList.remove("visible");
+      fullHeader.style.display = "flex";
+    }
+  });
 });
+
   </script>
 </body>
 </html>
