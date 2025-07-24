@@ -15,10 +15,6 @@
     }
 
     header {
-	     position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
       background: linear-gradient(to right, #283593, #64b5f6);
        color: white;
       padding: 15px 20px;
