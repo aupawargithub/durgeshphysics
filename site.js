@@ -170,30 +170,17 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(tab.dataset.target).classList.add('active');
     });
   });
-	document.addEventListener("DOMContentLoaded", () => {
-  const fullHeader = document.getElementById("full-header");
-  const compactHeader = document.getElementById("compact-header");
+	const fullHeader = document.getElementById("full-header");
+const compactHeader = document.getElementById("compact-header");
 
-  if (!fullHeader) {
-    console.warn("Missing element: #full-header");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    compactHeader.classList.add("visible");
+    fullHeader.style.display = "none";
+  } else {
+    compactHeader.classList.remove("visible");
+    fullHeader.style.display = "flex"; 
   }
-  if (!compactHeader) {
-    console.warn("Missing element: #compact-header");
-  }
-
-  if (!fullHeader || !compactHeader) {
-    return;
-  }
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      compactHeader.classList.add("visible");
-      fullHeader.style.display = "none";
-    } else {
-      compactHeader.classList.remove("visible");
-      fullHeader.style.display = "flex";
-    }
-  });
 });
 const swiper = new Swiper(".myHeroSwiper", {
   loop: true,
