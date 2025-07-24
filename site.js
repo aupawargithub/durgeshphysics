@@ -170,16 +170,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(tab.dataset.target).classList.add('active');
     });
   });
-	const fullHeader = document.getElementById("full-header");
-const compactHeader = document.getElementById("compact-header");
+	document.addEventListener("DOMContentLoaded", () => {
+  const fullHeader = document.getElementById("full-header");
+  const compactHeader = document.getElementById("compact-header");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    compactHeader.classList.add("visible");
-    fullHeader.style.display = "none";
-  } else {
-    compactHeader.classList.remove("visible");
-    fullHeader.style.display = "flex"; 
+  if (fullHeader && compactHeader) {
+    window.addEventListener("scroll", () => {
+      const showCompact = window.scrollY > 100;
+      compactHeader.classList.toggle("visible", showCompact);
+      fullHeader.classList.toggle("hidden", showCompact);
+    });
   }
 });
 const swiper = new Swiper(".myHeroSwiper", {
