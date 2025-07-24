@@ -51,6 +51,7 @@ header {
   flex-direction: column;
   align-items: center; 
   z-index: 999;
+transition: opacity 0.3s ease;
 }
 
 
@@ -88,7 +89,10 @@ header {
 .left-info p {
   margin: 2px 0;
 }
-    
+    .hidden {
+  opacity: 0;
+  pointer-events: none;
+}   
     #logoutBtn {
       background: var(--danger);
       color: white;
@@ -347,8 +351,8 @@ header {
   </style>
 </head>
 <body>
-<header>
-  <div id= "full-header" class="title-box">
+<header id= "full-header">
+  <div  class="title-box">
     <h1>
       <span class="main-title">DURGESH PHYSICS</span><br>
       <span class="subheading">Admin Dashboard</span>
@@ -624,30 +628,17 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
       }
     });
   };
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const fullHeader = document.getElementById("full-header");
   const compactHeader = document.getElementById("compact-header");
 
-  if (!fullHeader) {
-    console.warn("Missing element: #full-header");
+  if (fullHeader && compactHeader) {
+    window.addEventListener("scroll", () => {
+      const showCompact = window.scrollY > 100;
+      compactHeader.classList.toggle("visible", showCompact);
+      fullHeader.classList.toggle("hidden", showCompact);
+    });
   }
-  if (!compactHeader) {
-    console.warn("Missing element: #compact-header");
-  }
-
-  if (!fullHeader || !compactHeader) {
-    return;
-  }
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      compactHeader.classList.add("visible");
-      fullHeader.style.display = "none";
-    } else {
-      compactHeader.classList.remove("visible");
-      fullHeader.style.display = "flex";
-    }
-  });
 });
 
   </script>
