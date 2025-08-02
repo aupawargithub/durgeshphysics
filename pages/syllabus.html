@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <title>DURGESH PHYSICS - Syllabus</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../images/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DurgeshPhysics">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+             color: #2e2e2e;
+            background: #f1f5f9;
+               height: auto !important;
+    min-height: auto !important;
+            padding: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+            }
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+             page-break-inside: avoid;
+    break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 8px;
+                margin: 0 5px;
+            }
+        }
+        
+        .header {
+            background: linear-gradient(to right, #283593, #64b5f6);
+            color: white;
+            padding: 30px 17px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+           height: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .header {
+                padding: 38px 25px;
+                gap: 25px;
+               }
+        }
+        
+        @media (min-width: 1024px) {
+            .header {
+                padding: 48px 30px;
+                gap: 30px;
+                }
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .header-logo {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-logo img {
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+        
+        @media (min-width: 480px) {
+            .header-logo img {
+                width: 60px;
+                height: 60px;
+                border: 2px solid white;
+                 border-radius: 12px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .header-logo img {
+                width: 70px;
+                height: 70px;
+                border-radius: 8px;
+                 border: 2px solid white;
+                 border-radius: 12px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .header-logo img {
+                width: 80px;
+                height: 80px;
+                 border: 2px solid white;
+                 border-radius: 12px;
+            }
+        }
+        
+        .header-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+            min-width: 0;
+        }
+        
+        .header-content h1 {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        @media (min-width: 480px) {
+            .header-content h1 {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .header-content h1 {
+                font-size: 2.2em;
+                letter-spacing: 1.5px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .header-content h1 {
+                font-size: 2.8em;
+                letter-spacing: 2px;
+            }
+        }
+        
+        .header-content h2 {
+            font-size: 0.65em;
+            font-weight: 300;
+            opacity: 0.9;
+            line-height: 1.3;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        @media (min-width: 480px) {
+            .header-content h2 {
+                font-size: 0.75em;
+                line-height: 1.4;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .header-content h2 {
+                font-size: 0.85em;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .header-content h2 {
+                font-size: 1.0em;
+            }
+        }
+        
+.compact-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #283593, #64b5f6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.compact-header.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.compact-title {
+  font-size: 24px;
+  font-weight: bold;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+  .content {
+            padding: 20px 15px;
+             }
+         @media (min-width: 768px) {
+            .content {
+                padding: 40px 30px;
+            }
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-left: 5px solid #2a5298;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                margin-bottom: 40px;
+                padding: 25px;
+            }
+        }
+        
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .section h2 {
+            color: #1e3c72;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .section h2 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg,#764ba2,  #667eea);
+            border-radius: 2px;
+        }
+        
+        .board-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e3f2fd;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        @media (min-width: 768px) {
+            .board-section {
+                margin-bottom: 25px;
+                padding: 18px;
+            }
+        }
+        
+        .board-title {
+            color: #2a5298;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        @media (min-width: 768px) {
+            .board-title {
+                font-size: 1.3em;
+                margin-bottom: 12px;
+                gap: 10px;
+            }
+        }
+        
+        .board-title::before {
+            content: '📚';
+            font-size: 1.1em;
+        }
+        
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .chapter-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            position: relative;
+            padding-left: 20px;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+        
+        .chapter-list li:hover {
+            background: rgba(42, 82, 152, 0.05);
+            padding-left: 25px;
+        }
+        
+        .chapter-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-size: 0.7em;
+        }
+        
+        .chapter-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .standard-header {
+            background: linear-gradient(135deg, #764ba2, #667eea);
+            color: white;
+            padding: 15px;
+            margin: -15px -15px 15px -15px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        @media (min-width: 768px) {
+            .standard-header {
+                padding: 18px;
+                margin: -25px -25px 20px -25px;
+                font-size: 1.4em;
+            }
+        }
+        
+        .competitive-header {
+             background: linear-gradient(135deg, #1565c0, #1e88e5);
+            color: white;
+            padding: 15px;
+            margin: -15px -15px 15px -15px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        @media (min-width: 768px) {
+            .competitive-header {
+                padding: 18px;
+                margin: -25px -25px 20px -25px;
+                font-size: 1.4em;
+            }
+        }
+        
+        .footer {
+            background-color: #D3D3D3;
+      color: #000000;
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+        
+        @media (min-width: 768px) {
+            .footer {
+                padding: 30px;
+                font-size: 0.9em;
+            }
+        }
+        
+          .download-btn {
+            position: fixed;
+            top: var(--btn-top, 10px);
+            right: 10px;
+            background: linear-gradient(135deg, #764ba2, #667eea );
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+		  outline: none;
+  -webkit-tap-highlight-color: transparent;
+        }
+        
+        @media (min-width: 768px) {
+            .download-btn {
+                top: 20px;
+                right: 20px;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-size: 1em;
+            }
+        }
+        
+      .download-btn:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2); 
+   transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); 
+}
+
+        
+        .download-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+        
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .download-btn {
+                display: none;
+            }
+        }
+
+      
+
+        .no-animation * {
+    box-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+.section,
+.board-section,
+.chapter-list li,
+.standard-header,
+.competitive-header,
+.two-column {
+    page-break-inside: avoid;
+    break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #007bff, #6f42c1);
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  background: linear-gradient(135deg, #0056b3, #4a148c);
+  transform: scale(1.15);
+}
+
+
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">📄 Download PDF</button>
+
+      <div id="full-header" class="container">
+        <div class="header">
+            <div class="header-logo">
+                <img src="../images/durgesh_logo.png" alt="Durgesh Physics Logo">
+            </div>
+            <div class="header-content">
+                <h1>DURGESH PHYSICS</h1>
+                <h2>Syllabus for 9th to 12th | Maharashtra Board | CBSE Board | NEET/JEE | MHT-CET</h2>
+            </div>
+        </div>
+          <div id="compact-header" class="compact-header">
+  <span class="compact-title">DURGESH PHYSICS</span>
+</div>
+        <div class="content">
+          
+            <div class="section">
+                <div class="standard-header">🎓 CLASS 9th STANDARD</div>
+                
+                <div class="two-column">
+                    <div class="board-section">
+                        <h3 class="board-title">Maharashtra State Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Laws of Motion</li>
+                            <li><strong>Ch 2:</strong> Work and Energy</li>
+                            <li><strong>Ch 3:</strong> Current Electricity</li>
+                            <li><strong>Ch 4:</strong> Measurement of Matter</li>
+                            <li><strong>Ch 5:</strong> Heat</li>
+                            <li><strong>Ch 6:</strong> Refraction of Light</li>
+                            <li><strong>Ch 7:</strong> Wave Motion</li>
+                            <li><strong>Ch 8:</strong> The Universe</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board-section">
+                        <h3 class="board-title">CBSE Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Motion</li>
+                            <li><strong>Ch 2:</strong> Force and Laws of Motion</li>
+                            <li><strong>Ch 3:</strong> Gravitation</li>
+                            <li><strong>Ch 4:</strong> Work and Energy</li>
+                            <li><strong>Ch 5:</strong> Sound</li>
+                            <li><strong>Ch 6:</strong> Matter - Nature and Behaviour</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="section">
+                <div class="standard-header">🎓 CLASS 10th STANDARD</div>
+                
+                <div class="two-column">
+                    <div class="board-section">
+                        <h3 class="board-title">Maharashtra State Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Gravitation</li>
+                            <li><strong>Ch 2:</strong> Periodic Classification of Elements</li>
+                            <li><strong>Ch 3:</strong> Chemical Reactions and Equations</li>
+                            <li><strong>Ch 4:</strong> Effects of Electric Current</li>
+                            <li><strong>Ch 5:</strong> Heat</li>
+                            <li><strong>Ch 6:</strong> Refraction of Light</li>
+                            <li><strong>Ch 7:</strong> Lenses</li>
+                            <li><strong>Ch 8:</strong> Metallurgy</li>
+                            <li><strong>Ch 9:</strong> Carbon Compounds</li>
+                            <li><strong>Ch 10:</strong> Space Missions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board-section">
+                        <h3 class="board-title">CBSE Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Light - Reflection and Refraction</li>
+                            <li><strong>Ch 2:</strong> Human Eye and Colourful World</li>
+                            <li><strong>Ch 3:</strong> Electricity</li>
+                            <li><strong>Ch 4:</strong> Magnetic Effects of Electric Current</li>
+                            <li><strong>Ch 5:</strong> Sources of Energy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+          
+            <div class="section">
+                <div class="standard-header">🎓 CLASS 11th STANDARD</div>
+                
+                <div class="two-column">
+                    <div class="board-section">
+                        <h3 class="board-title">Maharashtra State Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Units and Measurements</li>
+                            <li><strong>Ch 2:</strong> Mathematical Methods</li>
+                            <li><strong>Ch 3:</strong> Motion in a Plane</li>
+                            <li><strong>Ch 4:</strong> Laws of Motion</li>
+                            <li><strong>Ch 5:</strong> Gravitation</li>
+                            <li><strong>Ch 6:</strong> Mechanical Properties of Solids</li>
+                            <li><strong>Ch 7:</strong> Thermal Properties of Matter</li>
+                            <li><strong>Ch 8:</strong> Sound</li>
+                            <li><strong>Ch 9:</strong> Optics</li>
+                            <li><strong>Ch 10:</strong> Electrostatics</li>
+                            <li><strong>Ch 11:</strong> Electric Current Through Conductors</li>
+                            <li><strong>Ch 12:</strong> Magnetic Effect of Electric Current</li>
+                            <li><strong>Ch 13:</strong> Electromagnetic Waves</li>
+                            <li><strong>Ch 14:</strong> Semiconductors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board-section">
+                        <h3 class="board-title">CBSE Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Physical World</li>
+                            <li><strong>Ch 2:</strong> Units and Measurements</li>
+                            <li><strong>Ch 3:</strong> Motion in a Straight Line</li>
+                            <li><strong>Ch 4:</strong> Motion in a Plane</li>
+                            <li><strong>Ch 5:</strong> Laws of Motion</li>
+                            <li><strong>Ch 6:</strong> Work, Energy and Power</li>
+                            <li><strong>Ch 7:</strong> System of Particles and Rotational Motion</li>
+                            <li><strong>Ch 8:</strong> Gravitation</li>
+                            <li><strong>Ch 9:</strong> Mechanical Properties of Solids</li>
+                            <li><strong>Ch 10:</strong> Mechanical Properties of Fluids</li>
+                            <li><strong>Ch 11:</strong> Thermal Properties of Matter</li>
+                            <li><strong>Ch 12:</strong> Thermodynamics</li>
+                            <li><strong>Ch 13:</strong> Kinetic Theory</li>
+                            <li><strong>Ch 14:</strong> Oscillations</li>
+                            <li><strong>Ch 15:</strong> Waves</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+          
+            <div class="section">
+                <div class="standard-header">🎓 CLASS 12th STANDARD</div>
+                
+                <div class="two-column">
+                    <div class="board-section">
+                        <h3 class="board-title">Maharashtra State Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Rotational Dynamics</li>
+                            <li><strong>Ch 2:</strong> Mechanical Properties of Fluids</li>
+                            <li><strong>Ch 3:</strong> Kinetic Theory of Gases and Radiation</li>
+                            <li><strong>Ch 4:</strong> Thermodynamics</li>
+                            <li><strong>Ch 5:</strong> Oscillations</li>
+                            <li><strong>Ch 6:</strong> Superposition of Waves</li>
+                            <li><strong>Ch 7:</strong> Wave Optics</li>
+                            <li><strong>Ch 8:</strong> Electrostatics</li>
+                            <li><strong>Ch 9:</strong> Current Electricity</li>
+                            <li><strong>Ch 10:</strong> Magnetic Fields due to Electric Current</li>
+                            <li><strong>Ch 11:</strong> Electromagnetic Induction</li>
+                            <li><strong>Ch 12:</strong> Electromagnetic Waves</li>
+                            <li><strong>Ch 13:</strong> Dual Nature of Radiation and Matter</li>
+                            <li><strong>Ch 14:</strong> Structure of Atoms and Nuclei</li>
+                            <li><strong>Ch 15:</strong> Semiconductor Devices</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board-section">
+                        <h3 class="board-title">CBSE Board</h3>
+                        <ul class="chapter-list">
+                            <li><strong>Ch 1:</strong> Electric Charges and Fields</li>
+                            <li><strong>Ch 2:</strong> Electrostatic Potential and Capacitance</li>
+                            <li><strong>Ch 3:</strong> Current Electricity</li>
+                            <li><strong>Ch 4:</strong> Moving Charges and Magnetism</li>
+                            <li><strong>Ch 5:</strong> Magnetism and Matter</li>
+                            <li><strong>Ch 6:</strong> Electromagnetic Induction</li>
+                            <li><strong>Ch 7:</strong> Alternating Current</li>
+                            <li><strong>Ch 8:</strong> Electromagnetic Waves</li>
+                            <li><strong>Ch 9:</strong> Ray Optics and Optical Instruments</li>
+                            <li><strong>Ch 10:</strong> Wave Optics</li>
+                            <li><strong>Ch 11:</strong> Dual Nature of Radiation and Matter</li>
+                            <li><strong>Ch 12:</strong> Atoms</li>
+                            <li><strong>Ch 13:</strong> Nuclei</li>
+                            <li><strong>Ch 14:</strong> Semiconductor Electronics</li>
+                            <li><strong>Ch 15:</strong> Communication Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="section">
+                <div class="competitive-header">🏆 COMPETITIVE EXAMS</div>
+                
+                <div class="board-section">
+                    <h3 class="board-title">NEET (National Eligibility cum Entrance Test)</h3>
+                    <ul class="chapter-list">
+                        <li><strong>Mechanics:</strong> Kinematics, Laws of Motion, Work Energy Power, Rotational Motion, Gravitation</li>
+                        <li><strong>Properties of Matter:</strong> Elasticity, Surface Tension, Viscosity, Thermal Properties</li>
+                        <li><strong>Thermodynamics:</strong> Laws of Thermodynamics, Kinetic Theory, Heat Transfer</li>
+                        <li><strong>Oscillations & Waves:</strong> SHM, Wave Motion, Sound Waves, Doppler Effect</li>
+                        <li><strong>Electrostatics:</strong> Coulomb's Law, Electric Field, Potential, Capacitance</li>
+                        <li><strong>Current Electricity:</strong> Ohm's Law, Kirchhoff's Laws, Electrical Instruments</li>
+                        <li><strong>Magnetism:</strong> Magnetic Field, Electromagnetic Induction, AC Circuits</li>
+                        <li><strong>Optics:</strong> Reflection, Refraction, Optical Instruments, Wave Optics</li>
+                        <li><strong>Modern Physics:</strong> Photoelectric Effect, Bohr's Model, Nuclear Physics</li>
+                    </ul>
+                </div>
+                
+                <div class="board-section">
+                    <h3 class="board-title">JEE (Joint Entrance Examination)</h3>
+                    <ul class="chapter-list">
+                        <li><strong>Mechanics:</strong> Advanced Kinematics, Complex Force Analysis, Rotational Dynamics</li>
+                        <li><strong>Fluid Mechanics:</strong> Bernoulli's Theorem, Viscous Flow, Surface Phenomena</li>
+                        <li><strong>Heat & Thermodynamics:</strong> Advanced Thermodynamic Processes, Heat Engines</li>
+                        <li><strong>Simple Harmonic Motion:</strong> Coupled Oscillations, Damped & Forced Oscillations</li>
+                        <li><strong>Waves:</strong> Interference, Diffraction, Polarization, Electromagnetic Waves</li>
+                        <li><strong>Electrostatics:</strong> Complex Electric Field Problems, Dielectrics</li>
+                        <li><strong>Current Electricity:</strong> Network Analysis, Measuring Instruments</li>
+                        <li><strong>Magnetism:</strong> Advanced Electromagnetic Induction, LCR Circuits</li>
+                        <li><strong>Optics:</strong> Advanced Ray Optics, Wave Optics, Optical Instruments</li>
+                        <li><strong>Modern Physics:</strong> Quantum Mechanics, Radioactivity, Nuclear Reactions</li>
+                    </ul>
+                </div>
+                
+                <div class="board-section">
+                    <h3 class="board-title">MHT-CET (Maharashtra Common Entrance Test)</h3>
+                    <ul class="chapter-list">
+                        <li><strong>11th Standard Topics:</strong> All Maharashtra Board 11th Physics chapters</li>
+                        <li><strong>12th Standard Topics:</strong> All Maharashtra Board 12th Physics chapters</li>
+                        <li><strong>Emphasis Areas:</strong> Rotational Dynamics, Wave Motion, Current Electricity</li>
+                        <li><strong>Special Focus:</strong> Numerical Problem Solving, Application-based Questions</li>
+                        <li><strong>Practical Applications:</strong> Real-world Physics Problems</li>
+                        <li><strong>Mathematical Physics:</strong> Vector Analysis, Differential Equations</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div class="section">
+                <h2>📋 Key Differences Between Boards & Exams</h2>
+                
+                <div class="two-column">
+                    <div class="board-section">
+                        <h3 class="board-title">Maharashtra State Board</h3>
+                        <ul class="chapter-list">
+                            <li>Regional focus with practical applications</li>
+                            <li>Strong emphasis on numerical problems</li>
+                            <li>Integration with local examples</li>
+                            <li>Moderate difficulty level</li>
+                            <li>Language flexibility (Marathi/English)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board-section">
+                        <h3 class="board-title">CBSE Board</h3>
+                        <ul class="chapter-list">
+                            <li>National curriculum with comprehensive coverage</li>
+                            <li>Strong theoretical foundation</li>
+                            <li>Research-oriented approach</li>
+                            <li>Higher difficulty level</li>
+                            <li>English/Hindi medium</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="two-column">
+                    <div class="board-section">
+                        <h3 class="board-title">NEET Preparation</h3>
+                        <ul class="chapter-list">
+                            <li>Medical entrance focused</li>
+                            <li>Biology integration important</li>
+                            <li>Moderate physics difficulty</li>
+                            <li>Time management crucial</li>
+                            <li>NCERT-based questions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="board-section">
+                        <h3 class="board-title">JEE Preparation</h3>
+                        <ul class="chapter-list">
+                            <li>Engineering entrance focused</li>
+                            <li>High difficulty level</li>
+                            <li>Advanced problem solving</li>
+                            <li>Mathematical approach</li>
+                            <li>Conceptual depth required</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="section">
+                <h2>📚 Recommended Study Strategy</h2>
+                
+                <div class="board-section">
+                    <h3 class="board-title">For School Board Students</h3>
+                    <ul class="chapter-list">
+                        <li><strong>Foundation Building:</strong> Focus on NCERT/State Board textbooks</li>
+                        <li><strong>Practice:</strong> Solve previous year questions and sample papers</li>
+                        <li><strong>Laboratory Work:</strong> Emphasize practical experiments and observations</li>
+                        <li><strong>Regular Revision:</strong> Weekly revision of completed chapters</li>
+                    </ul>
+                </div>
+                
+                <div class="board-section">
+                    <h3 class="board-title">For Competitive Exam Aspirants</h3>
+                    <ul class="chapter-list">
+                        <li><strong>Concept Clarity:</strong> Deep understanding of fundamental principles</li>
+                        <li><strong>Problem Solving:</strong> Practice diverse and challenging problems daily</li>
+                        <li><strong>Time Management:</strong> Solve mock tests regularly under timed conditions</li>
+                        <li><strong>Multiple Sources:</strong> Use advanced reference books and online resources</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+       <div class="footer">
+            <p><strong>DURGESH PHYSICS</strong></p>
+            <p>9th-12th | Board Exams | NEET | JEE | MHT-CET</p>
+            <p style="text-align:center; margin-top: 5px;">📧 Contact: <strong><a href="mailto:durgeshpawar883@gmail.com" style="color:#1e88e5;">durgeshpawar883@gmail.com</a></strong></p>
+             <p style="text-align:center; margin-top: 5px;">📞 Call us at <strong><a href="tel:+917499668944" style="color:#1e88e5;">+91 74996 68944</a></strong></p>
+       </div>
+    </div> 
+	
+<a href="#" class="scroll-to-top" id="scrollToTopBtn" title="Go to top">
+  &#8679;
+</a>
+   <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  if (!scrollToTopBtn) {
+    console.warn("Element with ID 'scrollToTopBtn' not found.");
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  scrollToTopBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+});
+
+function downloadPDF() {
+    const element = document.querySelector('.container');
+    if (!element) {
+        console.error("Container element not found!");
+        return;
+    }
+    
+    const fullHeader = document.getElementById("full-header");
+    const compactHeader = document.getElementById("compact-header");
+    
+    const originalCompactDisplay = compactHeader ? compactHeader.style.display : '';
+    const originalFullDisplay = fullHeader.style.display;
+    
+    fullHeader.style.display = 'block';
+    if (compactHeader) {
+        compactHeader.style.display = 'none';
+    }
+    
+    element.classList.add('no-animation');
+    
+    const contentHeight = element.scrollHeight * 0.264583;
+    
+    const opt = {
+        margin: 0,
+        filename: 'Durgesh_Physics_Syllabus.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+            scale: 2,
+            scrollY: 0,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#ffffff',
+            logging: false
+        },
+        jsPDF: {
+            unit: 'mm',
+            format: [210, contentHeight],
+            orientation: 'portrait'
+        },
+        pagebreak: { mode: ['css', 'legacy'] }
+    };
+    
+    html2pdf().set(opt).from(element).save()
+        .then(() => {
+            console.log('PDF generated successfully with original logo');
+            restoreElements();
+        })
+        .catch((error) => {
+            console.error('PDF generation failed:', error);
+            restoreElements();
+            alert('PDF generation failed. Please ensure your logo is hosted locally.');
+        });
+    
+    function restoreElements() {
+      
+        if (compactHeader) {
+            compactHeader.style.display = originalCompactDisplay;
+        }
+        fullHeader.style.display = originalFullDisplay;
+        
+        element.classList.remove('no-animation');
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const fullHeader = document.getElementById("full-header");
+  const compactHeader = document.getElementById("compact-header");
+  const downloadBtn = document.querySelector('.download-btn');
+
+  if (fullHeader && compactHeader && downloadBtn) {
+    window.addEventListener("scroll", () => {
+      const showCompact = window.scrollY > 100;
+      compactHeader.classList.toggle("visible", showCompact);
+      fullHeader.classList.toggle("hidden", showCompact);
+
+      
+      if (showCompact) {
+        downloadBtn.style.setProperty('--btn-top', '67px'); 
+      } else {
+        downloadBtn.style.setProperty('--btn-top', '10px'); 
+      }
+    });
+  }
+});
+
+</script>
+
+</body>
+</html>
+

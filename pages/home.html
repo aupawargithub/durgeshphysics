@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+  <title>DURGESH PHYSICS - Admin Dashboard</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="../images/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DurgeshPhysics">
+
+  <style>
+    :root {
+      --primary: #007bff;
+      --danger: #d32f2f;
+      --danger-dark: #b71c1c;
+      --bg: #f9f9f9;
+      --card-bg: #fff;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f1f5f9;
+  color: #333;
+  padding: 0;
+}
+   
+header {
+  background: linear-gradient(to right, #283593, #64b5f6);
+  color: #fff;
+  padding: 12px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  z-index: 999;
+transition: opacity 0.3s ease;
+}
+
+
+.title-box h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.title-box .main-title {
+  font-weight: bold;
+}
+
+.title-box .subheading {
+  font-size: 1rem;
+  color: #e0f7fa;
+  
+}
+
+.header-bottom {
+  margin-top: 8px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+
+.left-info {
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.left-info p {
+  margin: 2px 0;
+}
+    .hidden {
+  opacity: 0;
+  pointer-events: none;
+}   
+    #logoutBtn {
+      background: var(--danger);
+      color: white;
+      padding: 11px 22px;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      outline: none;
+  -webkit-tap-highlight-color: transparent;
+    }
+
+    #logoutBtn:hover {
+      background-color: var(--danger-dark);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      transform: translateY(-3px);
+    }
+@media (max-width: 480px) {
+  .title-box h1 {
+    font-size: 1.4rem;
+  }
+
+  .title-box .subheading {
+    font-size: 1.0rem;
+   
+  }
+
+  .left-info {
+    font-size: 0.75rem;
+  }
+
+  #logoutBtn {
+    padding: 7px 14px;
+    font-size: 1.0rem;
+  }
+}
+   .compact-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #283593, #64b5f6);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.compact-header.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.compact-title {
+  font-size: 24px;
+  font-weight: bold;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #cfd8dc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+    .card:hover {
+  transform: translateY(-4px); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.card h2 {
+      margin-top: 0;
+      font-size: 22px;
+      color: #2c3e50;
+      margin-bottom: 16px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 8px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+    
+.student-grid {
+  display: grid;
+ grid-template-columns: auto 1fr auto; 
+  gap: 10px 16px;
+  margin-top: 12px;
+}
+
+.student {
+  display: contents; 
+}
+
+.roll {
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+.roll a.roll-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.roll a.roll-link:hover {
+  text-decoration: underline;
+}
+
+.name {
+  color: #444;
+  word-break: break-word;
+}
+.fee {
+  color: #2e7d32; /* green for paid */
+  font-weight: 600;
+  white-space: nowrap;
+}
+.fee.pending {
+  color: #c62828; /* red for pending */
+}
+    
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin-top: 12px;
+    }
+
+   .upload-section button {
+  background: linear-gradient(135deg, #4e8ef7, #1e6ce3);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(30, 108, 227, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-section button:hover {
+  background: linear-gradient(135deg, #1e6ce3, #1558c4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(30, 108, 227, 0.3);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+.popup.show {
+  display: block;
+  opacity: 1;
+}
+
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 15px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+    
+    
+    .card button {
+  float: right;
+  background: linear-gradient(135deg, #4e8ef7, #1e6ce3);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.card button:hover {
+ background: linear-gradient(135deg, #1e6ce3, #1558c4);
+   transform: translateY(-2px); /* subtle lift */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); 
+}
+.expandable-card h2 {
+  cursor: pointer;
+   user-select: none; 
+   outline: none;           
+  -webkit-tap-highlight-color: transparent; 
+}
+	
+  </style>
+</head>
+<body>
+<header id= "full-header">
+  <div  class="title-box">
+    <h1>
+      <span class="main-title">DURGESH PHYSICS</span><br>
+      <span class="subheading">Admin Dashboard</span>
+    </h1>
+  </div>
+  <div class="header-bottom">
+    <div class="left-info">
+      <p id="welcome">Logged in as admin: durgeshpawar883@gmail.com</p>
+      <p class="user-info">User: Durgesh Pawar</p>
+    </div>
+    <button id="logoutBtn">Logout</button>
+  </div>
+</header>
+  <div id="compact-header" class="compact-header">
+  <span class="compact-title">DURGESH PHYSICS</span>
+</div>
+
+  <div class="dashboard">
+   
+<div class="card">
+  <h2>Student List</h2>
+  <div class="student-grid">
+    <div class="student"><span class="roll">DP133</span><span class="name">Rakesh Thorat</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll"><a href="student.html" class="roll-link">DP134</a></span><span class="name">Abhishek Jadhav</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP135</span><span class="name">Anjali Verma</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP136</span><span class="name">Sachin Kamat</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP137</span><span class="name">Kavita Jha</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP138</span><span class="name">Sanjay Magar</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP139</span><span class="name">Ramnath Gadhe</span><span class="fee">Paid</span></div>
+    <div class="student"> <span class="roll"><a href="student02.html" class="roll-link">DP140</a></span><span class="name">Neeta More</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP141</span><span class="name">Pratima Sahane</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP142</span><span class="name">Harish Mane</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP143</span><span class="name">Sagar Jadhav</span><span class="fee pending">Pending</span></div>
+    <div class="student"><span class="roll">DP144</span><span class="name">Akash Munde</span><span class="fee">Paid</span></div>
+    <div class="student"><span class="roll">DP145</span><span class="name">Pooja Kadam</span><span class="fee">Paid</span></div>
+  </div>
+</div>
+
+   
+    <div class="card upload-section">
+      <h2>Upload Study Material</h2>
+       <input type="file" id="fileInput" />
+<button onclick="simulateUpload()">Upload</button>
+
+    </div>
+
+ 
+<div id="uploadPopup" class="popup">
+  <div class="spinner"></div>
+  <p id="popupText">Uploading file...</p>
+</div>
+
+
+<div class="card">
+  <h2>Academic Content & Test Management</h2>
+  <ul>
+    <li><strong>Subject Content Uploaded:</strong></li>
+    <li>• Physics – 45 Lectures, 12 Notes, 3 Assignments</li>
+  </ul>
+
+  <ul style="margin-top: 20px;">
+    <li><strong>Upcoming Tests:</strong></li>
+    <li>📝 Weekly Test – 7th July (Sunday)</li>
+    <li>🧪 Mock NEET – 15th July</li>
+    <li>🧠 JEE Advanced Practice Test – 18th July</li>
+    <li>📊 Unit Test (Physics) – 22nd July</li>
+  </ul>
+</div>
+<div class="card">
+  <h2>Class Schedule</h2>
+  <ul style="padding: 0; margin: 0;">
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Mon</strong>
+      <span>JEE/NEET</span>
+      <span>10 AM – 12 PM</span>
+    </li>
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Tue</strong>
+      <span>HSC Board</span>
+      <span>10 AM – 12 PM</span>
+    </li>
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Wed</strong>
+      <span>JEE/NEET</span>
+      <span>2 PM – 4 PM</span>
+    </li>
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Thu</strong>
+      <span>JEE/NEET</span>
+      <span>10 AM – 12 PM</span>
+    </li>
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Fri</strong>
+      <span>SSC & HSC</span>
+      <span>11 AM – 4 PM</span>
+    </li>
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Sat</strong>
+      <span>JEE/NEET</span>
+      <span>10 AM – 12 PM</span>
+    </li>
+    <li style="display: grid; grid-template-columns: 80px 1fr 120px; padding: 6px 0;">
+      <strong>Sun</strong>
+      <span>Test</span>
+      <span>10 AM – 12 PM</span>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="card">
+  <h2>Important Academic Notices</h2>
+  <ul>
+    <li>📢 New JEE/NEET Batch Starts – 28th July</li>
+    <li>📢 HSC Board Batch Starts – From 24th July</li>
+    <li>📢 Q/A Doubt Clearing – 21st July</li>
+    
+    <li>📢 Timetable Update – Every Friday</li>
+    <li>📢 Fee Payment Deadline – 26th July</li>
+  
+  </ul>
+</div>
+
+
+   
+<div class="card expandable-card">
+  <h2 onclick="toggleCard(this)">Course & Batch Management ▾</h2>
+  <div class="card-content">
+    <ul>
+      <li>Add/Edit Courses <button onclick="alert('Add Course')">Add</button></li>
+       <li>Add/Edit Standard <button onclick="alert('Add Course')">Add</button></li>
+  
+      <li>Create Batches <button onclick="alert('Create Batch')">Create</button></li>
+      <li>Set Timetable <button onclick="alert('Set Timetable')">Set</button></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="card expandable-card">
+  <h2 onclick="toggleCard(this)">Test & Exam Management ▾</h2>
+  <div class="card-content">
+    <ul>
+      <li>Upload Test Papers <button onclick="alert('Upload Test')">Upload</button></li>
+      <li>MCQ Auto Evaluation <button onclick="alert('Evaluate MCQ')">Evaluate</button></li>
+      <li>Manual Mark Entry <button onclick="alert('Enter Marks')">Enter</button></li>
+      <li>Generate Rank List <button onclick="alert('Generate Rank')">Generate</button></li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<div class="card expandable-card">
+  <h2 onclick="toggleCard(this)">Communication Tools ▾</h2>
+  <div class="card-content">
+    <ul>
+      <li>Auto Alerts for Fee<button onclick="alert('Send SMS')">Send</button></li>
+      <li>Send SMS <button onclick="alert('Send SMS')">Send</button></li>
+      <li>WhatsApp Notice <button onclick="alert('Send WhatsApp')">Send</button></li>
+      <li>Email Circular <button onclick="alert('Send Email')">Send</button></li>
+      <li>Batch Announcements <button onclick="alert('Announce')">Announce</button></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+
+ 
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+    window.location.reload();
+  }
+});
+
+
+sessionStorage.setItem("visitedFromDashboard", "true");
+
+
+const isLoggedIn = localStorage.getItem("loggedIn") === "true" || sessionStorage.getItem("loggedIn") === "true";
+const userEmail = localStorage.getItem("userEmail") || sessionStorage.getItem("userEmail");
+
+if (!isLoggedIn) {
+  
+  window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+} else {
+  
+  const welcome = document.getElementById("welcome");
+  if (welcome) {
+    welcome.innerText = `Logged in as admin: ${userEmail}`;
+  }
+}
+
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+ 
+  localStorage.clear();
+  sessionStorage.clear();
+
+  
+  history.go(-1);
+
+  
+  setTimeout(() => {
+    if (window.location.pathname.includes("home.html")) {
+      window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+    }
+  }, 500);
+});
+
+
+
+
+
+     function simulateUpload() {
+    const popup = document.getElementById('uploadPopup');
+    const popupText = document.getElementById('popupText');
+    const fileInput = document.getElementById('fileInput');
+
+    
+    if (!fileInput.files || fileInput.files.length === 0) {
+      alert("Please select a file before uploading.");
+      return;
+    }
+
+    
+    popup.style.display = 'block';
+    popupText.textContent = "Uploading file...";
+
+    setTimeout(() => {
+      popup.classList.add("show");
+    }, 10);
+
+    setTimeout(() => {
+      popupText.textContent = "File uploaded successfully!";
+      fileInput.value = "";
+
+      setTimeout(() => {
+        popup.classList.remove("show");
+
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 300);
+      }, 1000);
+    }, 1000);
+  }
+    function toggleCard(header) {
+    const content = header.nextElementSibling;
+    const isHidden = content.style.display === "none";
+
+    
+    content.style.display = isHidden ? "block" : "none";
+
+    
+    header.innerHTML = isHidden
+      ? header.innerHTML.replace('▸', '▾')
+      : header.innerHTML.replace('▾', '▸');
+  }
+
+ 
+  window.onload = () => {
+    document.querySelectorAll('.card-content').forEach(div => {
+      div.style.display = 'block'; 
+    });
+    document.querySelectorAll('.expandable-card h2').forEach(header => {
+      if (!header.innerHTML.includes('▾')) {
+        header.innerHTML += ' ▾';
+      }
+    });
+  };
+document.addEventListener("DOMContentLoaded", () => {
+  const fullHeader = document.getElementById("full-header");
+  const compactHeader = document.getElementById("compact-header");
+
+  if (fullHeader && compactHeader) {
+    window.addEventListener("scroll", () => {
+      const showCompact = window.scrollY > 100;
+      compactHeader.classList.toggle("visible", showCompact);
+      fullHeader.classList.toggle("hidden", showCompact);
+    });
+  }
+});
+
+  </script>
+</body>
+</html>
