@@ -1,6 +1,6 @@
 # DURGESH PHYSICS
 
-**Durgesh Physics** is a static educational website built to provide Classes, YouTube content and access to physics study materials including notes, syllabus content, and student-related information. This project is developed and hosted using GitHub Pages.
+**Durgesh Physics** is a static educational website built to provide Classes updates, YouTube content and access to physics study materials including notes, syllabus content, and student-related information. This project is developed and hosted using GitHub Pages.
 
 ## Live Website
 
