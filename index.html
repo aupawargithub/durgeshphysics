@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+  <title>DURGESH PHYSICS</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/logo-192.png">
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/logo-180.png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DurgeshPhysics">
+	
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+	<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <header id="full-header">
+    <div class="header-left">
+      <img class="logo" src="images/durgesh_logo.png" alt="Logo" />
+     <div class="header-text">
+  <div class="header-title">DURGESH PHYSICS</div>
+  <div class="subtitle-row">
+    <div class="header-subtitle">Classes • YouTube Channel</div>
+    <div class="header-subtitle">9th–12th • NEET • JEE • CET</div>
+      </div>
+    </div>
+    </div>
+	<a href="tel:+917499668944" class="call-now">📞 Call Now</a>
+	  <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+<div id="compact-header" class="compact-header">
+  <img src="images/durgesh_logo.png" alt="Logo" class="logo">
+  <span class="compact-title">DURGESH PHYSICS</span>
+	<div class="menu-toggle" id="menuToggleCompact" onclick="toggleMenu('compact')">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+</div>
+	<div id="nav-wrapper">
+  <nav>
+     
+  <div class="nav-links mobile-hidden" id="navLinks">
+      <a href="#about">About Us</a>
+      <a href="#courses">Courses</a>
+      <a href="#syllabus">Syllabus</a>
+      <a href="#location">Location</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#register">Register Now</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#" id="fixedLoginBtn">Login</a>
+ <a href="https://www.youtube.com/@durgeshpawarphysics" target="_blank">YouTube Channel</a>
+	 
+    </div>
+  </nav>
+</div>		
+
+<div class="swiper myHeroSwiper">
+	<button id="loginBtn">Login</button>
+  <div class="swiper-wrapper">
+ <div class="swiper-slide" style="background-image: url('images/durgesh_Image.png')"></div>
+<div class="swiper-slide" style="background-image: url('images/durgesh_02.png')"></div>
+  </div>
+</div>
+
+<div class="swiper-pagination"></div>
+	
+	<div id="loginModal">
+  <div class="login-box">
+    <span class="close-btn" onclick="closeLogin()">×</span>
+   <img src="images/Login_logo.png" alt="Durgesh Physics Logo" class="login-logo"> 
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <div class="password-container">
+        <input type="password" id="password" placeholder="Password" required>
+         <span id="togglePassword" class="eye-icon fas fa-eye"></span>
+      </div>
+      <label>
+        <input type="checkbox" id="rememberMe"> Remember Me
+      </label>
+      <button type="submit">Login</button>
+    </form>
+	   
+<a href="#" id="forgotPasswordLink" style="display:block; text-align:center; margin-top:10px; color:#007BFF; text-decoration:none;">Forgot Password?</a>
+
+    <div class="message" id="messageBox"></div>
+  </div>
+		
+  <div class="login-box" id="forgotPasswordBox" style="display: none;">
+    <span class="close-btn" onclick="closeForgotPassword()">×</span>
+    <h2>Forgot Password</h2>
+    <form id="forgotPasswordForm">
+      <input type="email" id="forgotEmail" placeholder="Enter your email" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="message" id="forgotMessageBox"></div>
+  </div>
+</div>
+<div id="fullscreenLoader">
+  <div class="material-spinner"></div>
+</div>
+
+  <section id="about">
+    <h2><i class="fa-solid fa-atom"></i>About Us</h2>
+    <div class="info-box">
+      <p>Welcome to <strong>DURGESH PHYSICS</strong>, your trusted companion in mastering Physics. We provide classes and YouTube videos for students of <strong>9th to 12th Standard</strong>, with special coaching for competitive exams like <strong>NEET, JEE, and MHT-CET</strong>.</p>
+	  <p style="margin-bottom: 20px;">
+  Our mission is to build a strong conceptual foundation through personalized guidance, 
+  exam-focused strategies, and real-world application of physics principles.
+</p>  
+      <ul>
+        <li>✅ Strong foundation from basics to advanced concepts</li>
+        <li>✅ Visual demonstrations and interactive classes</li>
+        <li>✅ Notes, assignments, and conceptual tests</li>
+        <li>✅ Weekly test series with analysis</li>
+        <li>✅ Personal attention and doubt-solving</li>
+	      
+      </ul>
+    </div>
+  </section>
+	<section id="courses">
+  <h2><i class="fas fa-book-open"></i>Our Courses</h2>
+  <div class="tabs">
+    <ul class="tab-list">
+
+      <li class="tab-item active" data-target="ssc">9th & 10th (MH SSC & CBSE )</li>
+
+      <li class="tab-item" data-target="hsc">11th & 12th (MH HSC & CBSE)</li>
+      <li class="tab-item" data-target="mhtcet">MHT-CET</li>
+      <li class="tab-item" data-target="jee">JEE</li>
+      <li class="tab-item" data-target="neet">NEET</li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="ssc" class="content-panel active">
+        <h3>9th & 10th (MH SSC & CBSE)</h3>
+       <ul>
+        <li>✅ Complete syllabus coverage, weekly tests & doubt-solving tailored to SSC pattern.</li>
+          <li>✅ Build a strong foundation for 9th and 10th CBSE with our comprehensive courses that make learning easy.</li>
+          <li>✅ NCERT textbook–aligned coaching, emphasis on fundamentals and exemplar problems.</li>
+	        <li>✅ Scientifically designed modules aligned with NCERT to build strong foundational knowledge.</li>
+      <li>✅ Focused on disciplined progress, clarity, and long-term retention of physics concepts.</li>
+        </ul>
+      </div>
+       
+      <div id="hsc" class="content-panel">
+        <h3>11th & 12th (MH HSC & CBSE)</h3>
+      <ul>
+	<li>✅ Build a strong academic foundation with our expertly crafted MH HSC & CBSE curriculum.</li>
+        <li>✅ Advanced problem solving for Maharashtra HSC, exam-style practice & past-paper drills.</li>
+       <li>✅ Excel in your 12th CBSE board exams with our expert-led courses designed to boost performance.</li>
+	       <li>✅ A structured course that prepares students for academic excellence and competitive readiness.</li>
+<li>✅ Emphasis on logical reasoning, precise understanding, and score-oriented strategies.</li>
+      </ul>
+      </div>
+      <div id="mhtcet" class="content-panel">
+        <h3>MHT-CET</h3>
+      <ul>
+	<li>✅ Master MHT-CET topics with practice-driven learning for top engineering and medical colleges.</li>
+        <li>✅ Focused crash courses, mock tests & strategy sessions to ace the state CET exam.</li>
+          <li>✅ Join our result-driven batch designed exclusively for MHT-CET toppers.</li>
+	      <li>✅ Designed for Maharashtra students aiming for engineering and pharmacy careers through focused CET preparation.</li>
+	      <li>✅ We integrate board concepts with MCQ practice, time-bound strategies, and exam-specific accuracy.</li>
+         </ul>
+      </div>
+      <div id="jee" class="content-panel">
+        <h3>JEE (Main & Advanced)</h3>
+       <ul>
+        <li>✅ Intensive preparation with high-level problems, multiple full-length mocks & analysis.</li>
+	<li>✅ Crack JEE with intensive program covering advanced concepts and mock tests.</li>
+       <li>✅ Our structured modules and test series give you a competitive edge for JEE success.</li>
+	       <li>✅ Crafted for aspirants aiming at top engineering colleges, with rigorous problem-solving and theory.</li>
+<li>✅ Covers advanced concepts, application-driven learning, and JEE-level mastery.</li>
+          </ul>
+      </div>
+      <div id="neet" class="content-panel">
+        <h3>NEET</h3>
+      <ul>
+	<li>✅ Get a head start on NEET preparation with in-depth subject coaching and regular practice tests.</li>
+        <li>✅ Concept clarity sessions, regular tests & full syllabus revision for NEET aspirants.</li>
+       <li>✅ Boost your NEET score with our personalized mentorship and proven track record of top selections.</li>
+	      <li>✅ Specially structured for medical aspirants who need precision, speed, and clarity in Physics.</li>
+	     <li>✅ We simplify complex topics and build accuracy through NEET-targeted practice and guidance.</li>
+     </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="syllabus">
+  <h2><i class="fa-solid fa-book-open"></i>View Syllabus</h2>
+  <div class="info-box syllabus-box">
+    <p style="margin-bottom: 20px;">Explore the complete syllabus for <strong>9th to 12th Standard</strong> covering both <strong>Maharashtra Board</strong> and <strong>CBSE Board</strong>. We also provide comprehensive guidance for competitive exams like <strong>JEE, NEET, and MHT-CET</strong>.</p>
+
+<ul>
+  <li>📘 Chapter-wise breakdown for 9th to 12th (Maharashtra & CBSE Boards)</li>
+  <li>📘 Covers full syllabus for JEE, NEET, and MHT-CET</li>
+  <li>📘 Updated according to the latest academic curriculum</li>
+</ul>
+
+<div class="syllabus-button-container">
+      <a href="pages/syllabus.html" class="view-syllabus-button">📂 View Full Syllabus</a>
+    </div>
+  </div>
+</section>
+
+<section id="demo">
+  <h2><i class="fab fa-youtube"></i>
+YouTube Channel</h2>
+  <div class="info-box">
+    <p style="margin-bottom: 20px;">
+  Before joining, get a feel of our teaching style. Watch free demo classes and see how concepts become crystal clear.
+</p>
+
+<p style="margin-bottom: 20px;">
+  📺 Dive deeper into our learning journey! Explore topic-wise playlists, quick tips, and detailed lectures on our YouTube channel to strengthen your understanding.
+</p>
+
+<p>
+  🎥 Click here to explore our YouTube channel:
+</p>
+
+    
+    <a href="https://www.youtube.com/@durgeshpawarphysics" 
+   target="_blank" 
+   rel="noopener noreferrer"  class="demo-button">
+      <i class="fab fa-youtube" style=" font-size: 19px; color: #E74C3C; margin-right: 8px;"></i>
+  DURGESH PHYSICS
+    </a>
+  </div>
+</section>
+
+ <section id="location">
+    <h2><i class="fas fa-map-marker-alt"></i>Our Location</h2>
+    <div class="info-box">
+      <p><strong>Address:</strong> Arunoday colony, Deolai chowk, Beed Bypass Road, Chhatrapati Shambhaji Nagar, Maharashtra – 431005</p> 
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.1401232754155!2d75.3458418!3d19.8448469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba3d3c9ccd47f%3A0x7879c110aea43c1f!2sArunoday%20colony!5e0!3m2!1sen!2sin!4v1688308424355!5m2!1sen!2sin" allowfullscreen></iframe>
+    </div>
+  </section>
+	
+  <section id="testimonials">
+    <h2><i class="fas fa-comments"></i>Testimonials</h2>
+    <div class="testimonial">
+      "Physics became my favorite subject after joining Durgesh Sir's class. His way of teaching is extraordinary!" – <strong>Ankita S.</strong>
+    </div>
+    <div class="testimonial">
+      "Scored 92 in Physics because of consistent practice and great mentorship. Thank you Sir!" – <strong>Rahul K.</strong>
+    </div>
+    <div class="testimonial">
+      "The classes are focused, engaging, and exam-oriented. Highly recommended!" – <strong>Meera J.</strong>
+    </div>
+  </section>
+
+  <section id="register">
+    <h2><i class="fas fa-user-plus"></i>Register Now</h2>
+  <form onsubmit="handleContactForm(event)">
+      <input name="entry.1234567890" type="text" placeholder="Your Full Name" required>
+
+	  <div class="custom-select" onclick="toggleDropdown(this)">
+  <div class="selected" data-default="Select Your Class">Select Your Class</div>
+  <ul class="dropdown-list">
+    <li onclick="selectItem(this, event)">9th</li>
+    <li onclick="selectItem(this, event)">10th</li>
+    <li onclick="selectItem(this, event)">11th</li>
+    <li onclick="selectItem(this, event)">12th</li>
+  </ul>
+  <input type="hidden" name="entry.class" required>
+		  <div class="error-message" style="display: none; color: red; font-size: 14px;">Please select your class</div>
+</div>
+
+<div class="custom-select" onclick="toggleDropdown(this)">
+  <div class="selected" data-default="Select Your Course">Select Your Course</div>
+  <ul class="dropdown-list">
+    <li onclick="selectItem(this, event)">Maharashtra State Board</li>
+    <li onclick="selectItem(this, event)">CBSE</li>
+    <li onclick="selectItem(this, event)">JEE</li>
+    <li onclick="selectItem(this, event)">NEET</li>
+  </ul>
+  <input type="hidden" name="entry.course" required>
+	<div class="error-message" style="display: none; color: red; font-size: 14px;">Please select your course</div>
+</div>
+      <input name="entry.0987654321" type="email" placeholder="Your Email" required>
+      <input 
+  name="entry.1122334455" 
+  type="tel" 
+  placeholder="Mobile Number" 
+  required 
+  pattern="\d{10}" 
+  minlength="10" 
+  maxlength="10" 
+  title="Please enter exactly 10 digits" 
+>
+
+ <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2><i class="fas fa-envelope"></i>Contact Us</h2>
+    
+<form onsubmit="handleContactForm(event)">
+      <input name="entry.1234567890" type="text" placeholder="Your Name" required />
+     <input name="entry.0987654321" type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+     <p style="text-align:center; margin-top: 5px;">📞 Call us at <strong><a href="tel:+917499668944" style="color:#1e88e5;">+91 74996 68944</a></strong></p>
+  </section>
+	 
+<section id="discussion">
+  <h2><i class="fas fa-users"></i>Discussion Forum</h2>
+<form onsubmit="handleContactForm(event)">
+
+  <!-- Sample Q&A 1 -->
+  <div class="info-box" style="background: #E4ECFC;">
+<div class="question" style="font-weight: bold;">Q: Why does a heavier object not fall faster than a lighter one?</div>
+    <div class="answer">A: Because acceleration due to gravity is the same for all objects near Earth, ignoring air resistance.</div>
+  </div>
+
+ 
+ <div class="info-box" style="background: #E4ECFC;">
+     <div class="question" style="font-weight: bold;">Q: Why does light bend when it passes from air into water?</div>
+    <div class="answer">A: Light bends because it changes speed in different mediums (refraction).</div>
+  </div>
+
+
+  
+    <input type="text" name="name" placeholder="Your Name" required />
+    <textarea name="question" rows="4" placeholder="Ask your question..." required></textarea>
+    <button type="submit">Submit Question</button>
+  </form>
+
+</section>
+<div id="toast" class="toast-success" role="status" aria-live="polite" aria-atomic="true">
+  <div class="toast-content">
+    <span class="toast-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9 12l2 2l4 -4"/>
+      </svg>
+    </span>
+    <div class="toast-message">
+      <strong>Submitted successfully!</strong><br>
+      We’ll reach out shortly.
+    </div>
+  </div>
+  <div class="toast-bar"></div>
+</div>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn" title="Go to top">
+  &#8679;
+</a>
+
+<div class="whatsapp-float">
+  <a href="https://wa.me/917499668944" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     title="Chat on WhatsApp">
+    <img src="https://img.icons8.com/color/96/000000/whatsapp--v1.png" alt="WhatsApp Icon">
+  </a>
+</div>
+
+ <footer style="background-color: #D3D3D3; color: #000000; text-align: center; padding: 12px 5px; font-size: 14px; box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); line-height: 1.6;">
+  <div style="margin-bottom: 4px;">
+      Follow us on:
+      <a href="mailto:durgeshpawar883@gmail.com" style="color: #000000; margin: 0 6px; text-decoration: none;" title="Email">
+        <i class="fas fa-envelope" style="font-size: 17px;"></i>
+      </a>
+      <a href="https://www.youtube.com/@durgeshpawar883" target="_blank" style="color: #000000; margin: 0 6px; text-decoration: none;" title="YouTube">
+        <i class="fab fa-youtube" style="font-size: 17px;"></i>
+      </a>
+      <a href="https://wa.me/917499668944" target="_blank" style="color: #000000; margin: 0 6px; text-decoration: none;" title="WhatsApp">
+        <i class="fab fa-whatsapp" style="font-size: 17px;"></i>
+      </a>
+	  <a href="https://www.instagram.com/yourusername" target="_blank" style="color: #000000; margin: 0 6px; text-decoration: none;" title="Instagram">
+  <i class="fab fa-instagram" style="font-size: 17px;"></i>
+</a>
+    </div>
+	   <div>Terms & Conditions | Privacy Policy</div>
+    <div>&copy; 2025 DURGESH PHYSICS | All Rights Reserved</div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
