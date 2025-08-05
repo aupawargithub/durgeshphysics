@@ -722,7 +722,10 @@ h2 i {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-
+.demo-button-container {
+  text-align: center;
+  margin-top: 24px;
+}
 .demo-button {
   display: inline-block;
   margin-top: 0.8rem;
@@ -1596,3 +1599,4 @@ font-weight: 200;
   transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
