@@ -696,6 +696,27 @@ h2 i {
     ul li {
       margin-bottom: 10px;
     }
+.feature-list {
+  padding-left: 2px;
+}
+
+.feature-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.feature-item i.fas.fa-check-circle {
+  margin-right: 5px;
+  margin-top: 4px; 
+  flex-shrink: 0; 
+}
+
+.feature-item .text-content {
+  flex: 1;
+  line-height: 1.4;
+}
+
 #about .info-box {
   background: 
     linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
@@ -1598,5 +1619,6 @@ font-weight: 200;
   transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
