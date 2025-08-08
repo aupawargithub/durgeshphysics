@@ -6,7 +6,11 @@
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
   <title>DURGESH PHYSICS - Student Dashboard</title>
 <link rel="icon" type="image/png" sizes="32x32" href="../images/logo.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
@@ -27,7 +31,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f6f8;
       color: #333;
-      padding-bottom: 40px;
     }
 
 header {
@@ -315,7 +318,25 @@ transition: opacity 0.3s ease;
     width: 100%;
   }
 }
-  
+  footer {
+        background-color: #D3D3D3;
+      color: #000000;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); 
+	     z-index: 1000;
+    }
+ footer a {
+      color: #000000;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    footer a:hover {
+        color: #1e88e5;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -388,7 +409,26 @@ transition: opacity 0.3s ease;
       <a href="../Durgesh_Physics_Notes.pdf" download class="download-btn">Download</a>
     </div>
   </div>
-
+<footer style="background-color: #D3D3D3; color: #000000; text-align: center; padding: 12px 5px; font-size: 14px; box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); line-height: 1.6;">
+  <div style="margin-bottom: 4px;">
+      Follow us on:
+      <a href="mailto:durgeshpawar883@gmail.com" style="color: #000000; margin: 0 6px; text-decoration: none;" title="Email">
+        <i class="fas fa-envelope" style="font-size: 17px;"></i>
+      </a>
+      <a href="https://www.youtube.com/@durgeshpawarphysics" target="_blank" style="color: #000000; margin: 0 6px; text-decoration: none;" title="YouTube">
+        <i class="fab fa-youtube" style="font-size: 17px;"></i>
+      </a>
+      <a href="https://wa.me/917499668944" target="_blank" style="color: #000000; margin: 0 6px; text-decoration: none;" title="WhatsApp">
+        <i class="fab fa-whatsapp" style="font-size: 17px;"></i>
+      </a>
+	  <a href="https://www.instagram.com/yourusername" target="_blank" style="color: #000000; margin: 0 6px; text-decoration: none;" title="Instagram">
+  <i class="fab fa-instagram" style="font-size: 17px;"></i>
+</a>
+    </div>
+	   <div>Terms & Conditions | Privacy Policy</div>
+    <div>&copy; 2025 DURGESH PHYSICS | All Rights Reserved</div>
+  </div>
+</footer>
   <script>
 
 window.addEventListener("pageshow", (event) => {
@@ -456,5 +496,6 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 </script>
 </body>
 </html>
+
 
 
