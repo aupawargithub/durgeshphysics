@@ -1174,8 +1174,8 @@ form,
   }
 }
     footer {
-        background-color: #D3D3D3;
-      color: #000000;
+       background: linear-gradient(135deg, #64b5f6 0%, #283593 100%);
+      color: white;
       text-align: center;
       padding: 20px;
       font-size: 14px;
@@ -1183,7 +1183,7 @@ form,
 	     z-index: 1000;
     }
  footer a {
-      color: #000000;
+      color: white;
       transition: all 0.3s ease;
       display: inline-block;
     }
@@ -1619,6 +1619,7 @@ font-weight: 200;
   transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
