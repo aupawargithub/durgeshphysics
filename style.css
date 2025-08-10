@@ -1131,10 +1131,7 @@ form,
   transform: scale(1.15);
 }
 
-
-
-
-     .whatsapp-float {
+ .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -1175,12 +1172,10 @@ form,
 }
 
 @media (max-width: 767px) {
-
-  .whatsapp-float img {
-  width: 34px;
-  height: 34px;
-  display: block;
-}
+  .whatsapp-float a img {
+    width: 34px;
+    height: 34px;
+  }
 }
     footer {
        background: linear-gradient(135deg, #64b5f6 0%, #283593 100%);
@@ -1628,6 +1623,7 @@ font-weight: 200;
   transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
