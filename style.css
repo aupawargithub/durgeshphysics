@@ -1106,8 +1106,8 @@ form,
     }
 .scroll-to-top {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
+  bottom: 86px;
+  right: 17px;
   background: linear-gradient(135deg, #007bff, #6f42c1);
   color: white;
   font-size: 24px;
@@ -1133,8 +1133,8 @@ form,
 
  .whatsapp-float {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 17px;
   z-index: 999;
   background-color: #25D366;
   border-radius: 50%;
@@ -1623,6 +1623,7 @@ font-weight: 200;
   transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
