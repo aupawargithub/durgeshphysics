@@ -369,11 +369,12 @@ transform-origin: top;
 	nav a {
   color: #283593;
   text-decoration: none;
-margin: 9px 0;          
+  margin: 9px 0;          
   padding: 8px 20px; 
   font-weight: 600;
+  font-size: 18px;
   transition: color 0.3s;
-border-bottom: 1px solid #cfd8dc; 
+ border-bottom: 1px solid #cfd8dc; 
  width: 100%;                
   max-width: 300px;          
   box-sizing: border-box;    
@@ -1623,6 +1624,7 @@ font-weight: 200;
   transform: translateY(-2px);
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
