@@ -1,6 +1,6 @@
 
-  
- if ('serviceWorker' in navigator) {
+
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js')
       .then(reg => console.log('Service Worker registered:', reg.scope))
@@ -8,7 +8,7 @@
   });
 }
 
- function toggleMenu(source = 'main') {
+function toggleMenu(source = 'main') {
   const navLinks = document.getElementById("navLinks");
   const toggleMain = document.getElementById("menuToggle");
   const toggleCompact = document.getElementById("menuToggleCompact");
@@ -35,9 +35,9 @@
       navLinks.style.top = '';
     }
   } else {
-    
+
     navLinks.classList.remove("prevent-scroll");
-	  // Wait for the transition (400ms) before hiding completely
+    // Wait for the transition (400ms) before hiding completely
     setTimeout(() => {
       navLinks.classList.add("mobile-hidden");
       navLinks.style.top = '';
@@ -54,7 +54,7 @@ document.querySelectorAll('#navLinks a').forEach(link => {
     const toggleMain = document.getElementById("menuToggle");
     const toggleCompact = document.getElementById("menuToggleCompact");
 
-    navLinks.classList.remove("active", "prevent-scroll"); 
+    navLinks.classList.remove("active", "prevent-scroll");
     navLinks.classList.add("mobile-hidden");
     navLinks.style.top = '';
     navLinks.style.position = '';
@@ -102,30 +102,30 @@ function handleContactForm(event) {
   });
 
   if (!isValid) {
-    return; 
+    return;
   }
- const toast = document.getElementById("toast");
-const toastBar = toast?.querySelector(".toast-bar");
+  const toast = document.getElementById("toast");
+  const toastBar = toast?.querySelector(".toast-bar");
 
-if (toast && toastBar) {
-  toast.style.display = "block";
-  toast.classList.remove("fade-active", "fade-out");
-  void toast.offsetWidth;
-  toast.classList.add("fade-active");
-  toastBar.style.animation = "none";
-  void toastBar.offsetHeight; 
-  toastBar.style.animation = "toast-timer 3s linear forwards";
-  setTimeout(() => {
-    toast.classList.remove("fade-active");
-    toast.classList.add("fade-out");
+  if (toast && toastBar) {
+    toast.style.display = "block";
+    toast.classList.remove("fade-active", "fade-out");
+    void toast.offsetWidth;
+    toast.classList.add("fade-active");
+    toastBar.style.animation = "none";
+    void toastBar.offsetHeight;
+    toastBar.style.animation = "toast-timer 3s linear forwards";
     setTimeout(() => {
-      toast.style.display = "none";
-      toast.classList.remove("fade-out");
-    }, 400); 
-  }, 3200); 
-}
+      toast.classList.remove("fade-active");
+      toast.classList.add("fade-out");
+      setTimeout(() => {
+        toast.style.display = "none";
+        toast.classList.remove("fade-out");
+      }, 400);
+    }, 3200);
+  }
   form.reset();
- form.querySelectorAll('.custom-select').forEach(select => {
+  form.querySelectorAll('.custom-select').forEach(select => {
     const selected = select.querySelector('.selected');
     const hiddenInput = select.querySelector('input[type="hidden"]');
 
@@ -163,19 +163,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-	document.querySelectorAll('#courses .tab-item').forEach(tab => {
-    tab.addEventListener('click', () => {
-      
-      document.querySelectorAll('#courses .tab-item').forEach(t => t.classList.remove('active'));
-      
-      document.querySelectorAll('#courses .content-panel').forEach(p => p.classList.remove('active'));
+document.querySelectorAll('#courses .tab-item').forEach(tab => {
+  tab.addEventListener('click', () => {
 
-      tab.classList.add('active');
-      // show its panel
-      document.getElementById(tab.dataset.target).classList.add('active');
-    });
+    document.querySelectorAll('#courses .tab-item').forEach(t => t.classList.remove('active'));
+
+    document.querySelectorAll('#courses .content-panel').forEach(p => p.classList.remove('active'));
+
+    tab.classList.add('active');
+    // show its panel
+    document.getElementById(tab.dataset.target).classList.add('active');
   });
-	document.addEventListener("DOMContentLoaded", () => {
+});
+document.addEventListener("DOMContentLoaded", () => {
   const fullHeader = document.getElementById("full-header");
   const compactHeader = document.getElementById("compact-header");
 
@@ -201,17 +201,17 @@ const swiper = new Swiper(".myHeroSwiper", {
   },
 });
 const loginBtn = document.getElementById("loginBtn");
-  const fixedLoginBtn = document.getElementById("fixedLoginBtn");
-  const loginModal = document.getElementById("loginModal");
-  const messageBox = document.getElementById("messageBox");
-  const togglePassword = document.getElementById("togglePassword");
-  const passwordInput = document.getElementById("password");
+const fixedLoginBtn = document.getElementById("fixedLoginBtn");
+const loginModal = document.getElementById("loginModal");
+const messageBox = document.getElementById("messageBox");
+const togglePassword = document.getElementById("togglePassword");
+const passwordInput = document.getElementById("password");
 const users = [
-    { email: "durgeshpawar883@gmail.com", password: "dgp4912" },
-    { email: "abhijadhav555@gmail.com", password: "abhi1526" },
-    { email: "neetamore779@gmail.com", password: "neeta5716" }
-  ];
- const isLoggedIn =
+  { email: "durgeshpawar883@gmail.com", password: "dgp4912" },
+  { email: "abhijadhav555@gmail.com", password: "abhi1526" },
+  { email: "neetamore779@gmail.com", password: "neeta5716" }
+];
+const isLoggedIn =
   localStorage.getItem("loggedIn") === "true" ||
   sessionStorage.getItem("loggedIn") === "true";
 const userEmail = localStorage.getItem("userEmail") || sessionStorage.getItem("userEmail");
@@ -222,7 +222,7 @@ const cameFromDashboard = sessionStorage.getItem("visitedFromDashboard") === "tr
 const loggedOut = sessionStorage.getItem("loggedOut") === "true";
 
 if (isLoggedIn && !cameFromDashboard && !loggedOut) {
- 
+
   sessionStorage.removeItem("visitedFromDashboard");
   if (role === "admin") {
     window.location.href = "pages/home.html";
@@ -234,79 +234,79 @@ if (isLoggedIn && !cameFromDashboard && !loggedOut) {
 }
 sessionStorage.removeItem("loggedOut");
 
- function openLogin() {
-    loginModal.style.display = "flex";
-    messageBox.textContent = "";
-  }
+function openLogin() {
+  loginModal.style.display = "flex";
+  messageBox.textContent = "";
+}
 
 function closeLogin() {
-    loginModal.style.display = "none";
-    messageBox.textContent = "";
-  }
+  loginModal.style.display = "none";
+  messageBox.textContent = "";
+}
 togglePassword.addEventListener("click", () => {
-    const isPassword = passwordInput.getAttribute("type") === "password";
-    passwordInput.setAttribute("type", isPassword ? "text" : "password");
+  const isPassword = passwordInput.getAttribute("type") === "password";
+  passwordInput.setAttribute("type", isPassword ? "text" : "password");
 
-    // Toggle the icon class
-    togglePassword.classList.toggle("fa-eye");
-    togglePassword.classList.toggle("fa-eye-slash");
-  });
+  // Toggle the icon class
+  togglePassword.classList.toggle("fa-eye");
+  togglePassword.classList.toggle("fa-eye-slash");
+});
 
- function showSpinnerThenLogin() {
+function showSpinnerThenLogin() {
   const loader = document.getElementById("fullscreenLoader");
   loader.classList.add("active");
 
   setTimeout(() => {
     loader.classList.remove("active");
-    openLogin(); 
-  }, 500); 
+    openLogin();
+  }, 500);
 }
 
- loginBtn.onclick = showSpinnerThenLogin;
+loginBtn.onclick = showSpinnerThenLogin;
 fixedLoginBtn.onclick = showSpinnerThenLogin;
 
-  
-  document.getElementById("loginForm").addEventListener("submit", function (e) {
-    e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
-    const remember = document.getElementById("rememberMe").checked;
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const user = users.find(
-      user => user.email === email && user.password === password
-    );
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const remember = document.getElementById("rememberMe").checked;
 
-    if (user) {
-  const isAdmin = email === "durgeshpawar883@gmail.com";
-  const isStudent1 = email === "abhijadhav555@gmail.com";
-  const isStudent2 = email === "neetamore779@gmail.com";
+  const user = users.find(
+    user => user.email === email && user.password === password
+  );
 
-  const storage = remember ? localStorage : sessionStorage;
-  storage.setItem("loggedIn", "true");
-  storage.setItem("userEmail", email);
-  storage.setItem("role", isAdmin ? "admin" : "student");
+  if (user) {
+    const isAdmin = email === "durgeshpawar883@gmail.com";
+    const isStudent1 = email === "abhijadhav555@gmail.com";
+    const isStudent2 = email === "neetamore779@gmail.com";
 
-  messageBox.style.color = "green";
-  messageBox.textContent = "Login successful! Redirecting...";
+    const storage = remember ? localStorage : sessionStorage;
+    storage.setItem("loggedIn", "true");
+    storage.setItem("userEmail", email);
+    storage.setItem("role", isAdmin ? "admin" : "student");
 
-  setTimeout(() => {
-    if (isStudent1) {
-      window.location.href = "pages/student.html";
-    } else if (isStudent2) {
-      window.location.href = "pages/student02.html";
-    } else {
-      window.location.href = "pages/home.html";
-    }
-  }, 1000);
+    messageBox.style.color = "green";
+    messageBox.textContent = "Login successful! Redirecting...";
 
- } else {
-      messageBox.style.color = "red";
-      messageBox.textContent = "Invalid email or password.";
-    }
-  });
+    setTimeout(() => {
+      if (isStudent1) {
+        window.location.href = "pages/student.html";
+      } else if (isStudent2) {
+        window.location.href = "pages/student02.html";
+      } else {
+        window.location.href = "pages/home.html";
+      }
+    }, 1000);
 
- document.getElementById("forgotPasswordLink").addEventListener("click", function (e) {
+  } else {
+    messageBox.style.color = "red";
+    messageBox.textContent = "Invalid email or password.";
+  }
+});
+
+document.getElementById("forgotPasswordLink").addEventListener("click", function (e) {
   e.preventDefault();
   document.querySelector(".login-box").style.display = "none";
   document.getElementById("forgotPasswordBox").style.display = "block";
@@ -325,22 +325,22 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
 
   if (email.trim() === "") {
     messageBox.innerText = "Please enter an email.";
-    messageBox.style.color = ""; 
+    messageBox.style.color = "";
   } else if (email === "durgeshpawar883@gmail.com" ||
     email === "abhijadhav555@gmail.com" || email === "neetamore779@gmail.com") {
     messageBox.innerText = "Password reset successful. Please check your email.";
     messageBox.style.color = "green";
     emailInput.value = "";
 
-    
+
     setTimeout(() => {
       messageBox.innerText = "";
     }, 3000);
   } else {
     messageBox.innerText = "Email not registered";
     messageBox.style.color = "red";
-    emailInput.value = ""; 
-    
+    emailInput.value = "";
+
     setTimeout(() => {
       messageBox.innerText = "";
     }, 3000);
@@ -349,7 +349,7 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
 window.addEventListener("pageshow", function (event) {
   const isHistoryNav = event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward";
   if (isHistoryNav) {
-    window.location.reload(); 
+    window.location.reload();
   }
 });
 
@@ -374,7 +374,7 @@ window.addEventListener("pageshow", function (event) {
   });
 })();
 function toggleDropdown(selectEl) {
-  
+
   const allSelects = document.querySelectorAll('.custom-select');
   allSelects.forEach(el => {
     if (el !== selectEl) el.classList.remove('active');
@@ -384,7 +384,7 @@ function toggleDropdown(selectEl) {
 }
 
 function selectItem(li, event) {
-  event.stopPropagation(); 
+  event.stopPropagation();
 
   const customSelect = li.closest('.custom-select');
   const selected = customSelect.querySelector('.selected');
@@ -398,7 +398,7 @@ function selectItem(li, event) {
   selected.classList.remove('input-error');
   hiddenInput.classList.remove('input-error');
 
- if (li.textContent !== defaultText) {
+  if (li.textContent !== defaultText) {
     customSelect.classList.add('has-value');
   } else {
     customSelect.classList.remove('has-value');
@@ -424,4 +424,3 @@ document.addEventListener('click', function (e) {
     }
   });
 });
-
