@@ -467,6 +467,27 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
   }, 500);
 });
 
+let inactivityTimeout;
+const AUTO_LOGOUT_TIME = 5 * 60 * 1000; 
+
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimeout);
+  inactivityTimeout = setTimeout(() => {
+   
+    localStorage.clear();
+    sessionStorage.clear();
+
+    window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+  }, AUTO_LOGOUT_TIME);
+}
+
+["click", "mousemove", "keypress", "scroll", "touchstart"].forEach(evt => {
+  window.addEventListener(evt, resetInactivityTimer, false);
+});
+
+resetInactivityTimer();
+
+	  
     function loadProfileImage(event) {
     const image = document.getElementById('profilePic');
     image.src = URL.createObjectURL(event.target.files[0]);
@@ -487,6 +508,7 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 </script>
 </body>
 </html>
+
 
 
 
