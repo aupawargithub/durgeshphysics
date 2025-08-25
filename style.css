@@ -1389,7 +1389,18 @@ footer a:hover {
   // padding: 5px;             
 }
 
+.login-box form {
+  position: static !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
 
+.login-box form::before {
+  content: none !important;
+}
 .login-box input[type="email"],
 .login-box input[type="password"] {
   width: 100%;
@@ -1717,3 +1728,4 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
