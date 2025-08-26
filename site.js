@@ -247,6 +247,7 @@ function closeLogin() {
     loader.classList.remove("active");
     loginModal.style.display = "none";
     messageBox.textContent = "";
+    document.getElementById("loginForm").reset();
   }, 500); 
 }
 
@@ -341,6 +342,9 @@ function closeForgotPassword() {
     loader.classList.remove("active");
     document.getElementById("forgotPasswordBox").style.display = "none";
     document.querySelector(".login-box").style.display = "block";
+
+    document.getElementById("forgotPasswordForm").reset();
+    document.getElementById("forgotMessageBox").textContent = "";
   }, 500); 
 }
 
@@ -461,5 +465,6 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
