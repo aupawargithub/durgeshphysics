@@ -594,19 +594,24 @@ if (!isLoggedIn) {
 
 
 document.getElementById("logoutBtn").addEventListener("click", () => {
- 
-  localStorage.clear();
-  sessionStorage.clear();
+  const loadingScreen = document.getElementById("loadingScreen");
+  if (loadingScreen) {
+    loadingScreen.style.display = "flex";
+    loadingScreen.style.opacity = "1";
+  }
 
-  
-  history.go(-1);
-
-  
   setTimeout(() => {
-    if (window.location.pathname.includes("home.html")) {
-      window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
-    }
-  }, 500);
+    localStorage.clear();
+    sessionStorage.clear();
+
+    history.go(-1);
+
+    setTimeout(() => {
+      if (window.location.pathname.includes("home.html")) {
+        window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+      }
+    }, 500);
+  }, 500); 
 });
 
 let inactivityTimeout;
@@ -615,11 +620,18 @@ const AUTO_LOGOUT_TIME = 5 * 60 * 1000;
 function resetInactivityTimer() {
   clearTimeout(inactivityTimeout);
   inactivityTimeout = setTimeout(() => {
-    
-    localStorage.clear();
-    sessionStorage.clear();
+    const loadingScreen = document.getElementById("loadingScreen");
+    if (loadingScreen) {
+      loadingScreen.style.display = "flex";
+      loadingScreen.style.opacity = "1";
+    }
 
-    window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+    setTimeout(() => {
+      localStorage.clear();
+      sessionStorage.clear();
+
+      window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+    }, 500);
   }, AUTO_LOGOUT_TIME);
 }
 
@@ -629,9 +641,7 @@ function resetInactivityTimer() {
 
 resetInactivityTimer();
 
-
-
-     function simulateUpload() {
+ function simulateUpload() {
     const popup = document.getElementById('uploadPopup');
     const popupText = document.getElementById('popupText');
     const fileInput = document.getElementById('fileInput');
@@ -700,15 +710,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-	document.addEventListener("DOMContentLoaded", () => {
+		document.addEventListener("DOMContentLoaded", () => {
   const loadingScreen = document.getElementById('loadingScreen');
   if (loadingScreen) {
     setTimeout(() => {
       loadingScreen.style.opacity = '0';
       setTimeout(() => {
-        if (loadingScreen.parentNode) {
-          loadingScreen.parentNode.removeChild(loadingScreen);
-        }
+        loadingScreen.style.display = "none";
       }, 500);
     }, 800);
   }
