@@ -240,9 +240,16 @@ function openLogin() {
 }
 
 function closeLogin() {
-  loginModal.style.display = "none";
-  messageBox.textContent = "";
+  const loader = document.getElementById("fullscreenLoader");
+  loader.classList.add("active");
+
+  setTimeout(() => {
+    loader.classList.remove("active");
+    loginModal.style.display = "none";
+    messageBox.textContent = "";
+  }, 500); 
 }
+
 togglePassword.addEventListener("click", () => {
   const isPassword = passwordInput.getAttribute("type") === "password";
   passwordInput.setAttribute("type", isPassword ? "text" : "password");
@@ -424,3 +431,4 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
