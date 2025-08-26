@@ -1441,6 +1441,8 @@ footer a:hover {
   font-size: 20px;
   cursor: pointer;
   color: #000000;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .message {
@@ -1708,6 +1710,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
