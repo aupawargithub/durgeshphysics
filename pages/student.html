@@ -497,23 +497,27 @@ if (!isLoggedIn || (role !== "student" && role !== "admin")){
   }
 }
 
-
 document.getElementById("logoutBtn").addEventListener("click", () => {
- 
-  localStorage.clear();
-  sessionStorage.clear();
+  const loadingScreen = document.getElementById("loadingScreen");
+  if (loadingScreen) {
+   
+    loadingScreen.style.display = "flex";
+    loadingScreen.style.opacity = "1";
+  }
 
-  
-  sessionStorage.setItem("loggedOut", "true");
-
- 
-  history.go(-1);
-
-  
   setTimeout(() => {
-    if (window.location.pathname.includes("student.html")) {
-      window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
-    }
+    localStorage.clear();
+    sessionStorage.clear();
+
+    sessionStorage.setItem("loggedOut", "true");
+
+    history.go(-1);
+
+    setTimeout(() => {
+      if (window.location.pathname.includes("student.html")) {
+        window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+      }
+    }, 500);
   }, 500);
 });
 
@@ -523,11 +527,18 @@ const AUTO_LOGOUT_TIME = 5 * 60 * 1000;
 function resetInactivityTimer() {
   clearTimeout(inactivityTimeout);
   inactivityTimeout = setTimeout(() => {
-   
-    localStorage.clear();
-    sessionStorage.clear();
+    const loadingScreen = document.getElementById("loadingScreen");
+    if (loadingScreen) {
+     
+      loadingScreen.style.display = "flex";
+      loadingScreen.style.opacity = "1";
+    }
+    setTimeout(() => {
+      localStorage.clear();
+      sessionStorage.clear();
 
-    window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+      window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+    }, 500);
   }, AUTO_LOGOUT_TIME);
 }
 
@@ -536,8 +547,8 @@ function resetInactivityTimer() {
 });
 
 resetInactivityTimer();
-	  
- function loadProfileImage(event) {
+
+	function loadProfileImage(event) {
     const image = document.getElementById('profilePic');
     image.src = URL.createObjectURL(event.target.files[0]);
   }
@@ -553,15 +564,13 @@ resetInactivityTimer();
     });
   }
 });
-	  document.addEventListener("DOMContentLoaded", () => {
+	 document.addEventListener("DOMContentLoaded", () => {
   const loadingScreen = document.getElementById('loadingScreen');
   if (loadingScreen) {
     setTimeout(() => {
       loadingScreen.style.opacity = '0';
       setTimeout(() => {
-        if (loadingScreen.parentNode) {
-          loadingScreen.parentNode.removeChild(loadingScreen);
-        }
+        loadingScreen.style.display = "none";
       }, 500);
     }, 800);
   }
@@ -569,6 +578,7 @@ resetInactivityTimer();
 </script>
 </body>
 </html>
+
 
 
 
