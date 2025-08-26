@@ -284,44 +284,64 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     user => user.email === email && user.password === password
   );
 
-  if (user) {
-    const isAdmin = email === "durgeshpawar883@gmail.com";
-    const isStudent1 = email === "abhijadhav555@gmail.com";
-    const isStudent2 = email === "neetamore779@gmail.com";
+  const loader = document.getElementById("fullscreenLoader");
+  loader.classList.add("active");
 
-    const storage = remember ? localStorage : sessionStorage;
-    storage.setItem("loggedIn", "true");
-    storage.setItem("userEmail", email);
-    storage.setItem("role", isAdmin ? "admin" : "student");
+  setTimeout(() => {
+    loader.classList.remove("active");
 
-    messageBox.style.color = "green";
-    messageBox.textContent = "Login successful! Redirecting...";
+    if (user) {
+      const isAdmin = email === "durgeshpawar883@gmail.com";
+      const isStudent1 = email === "abhijadhav555@gmail.com";
+      const isStudent2 = email === "neetamore779@gmail.com";
 
-    setTimeout(() => {
-      if (isStudent1) {
-        window.location.href = "pages/student.html";
-      } else if (isStudent2) {
-        window.location.href = "pages/student02.html";
-      } else {
-        window.location.href = "pages/home.html";
-      }
-    }, 1000);
+      const storage = remember ? localStorage : sessionStorage;
+      storage.setItem("loggedIn", "true");
+      storage.setItem("userEmail", email);
+      storage.setItem("role", isAdmin ? "admin" : "student");
 
-  } else {
-    messageBox.style.color = "red";
-    messageBox.textContent = "Invalid email or password.";
-  }
+      messageBox.style.color = "green";
+      messageBox.textContent = "Login successful! Redirecting...";
+
+      setTimeout(() => {
+        if (isStudent1) {
+          window.location.href = "pages/student.html";
+        } else if (isStudent2) {
+          window.location.href = "pages/student02.html";
+        } else {
+          window.location.href = "pages/home.html";
+        }
+      }, 1000);
+
+    } else {
+      messageBox.style.color = "red";
+      messageBox.textContent = "Invalid email or password.";
+    }
+  }, 500); 
 });
 
 document.getElementById("forgotPasswordLink").addEventListener("click", function (e) {
   e.preventDefault();
-  document.querySelector(".login-box").style.display = "none";
-  document.getElementById("forgotPasswordBox").style.display = "block";
+
+  const loader = document.getElementById("fullscreenLoader");
+  loader.classList.add("active");
+
+  setTimeout(() => {
+    loader.classList.remove("active");
+    document.querySelector(".login-box").style.display = "none";
+    document.getElementById("forgotPasswordBox").style.display = "block";
+  }, 500); 
 });
 
 function closeForgotPassword() {
-  document.getElementById("forgotPasswordBox").style.display = "none";
-  document.querySelector(".login-box").style.display = "block";
+  const loader = document.getElementById("fullscreenLoader");
+  loader.classList.add("active");
+
+  setTimeout(() => {
+    loader.classList.remove("active");
+    document.getElementById("forgotPasswordBox").style.display = "none";
+    document.querySelector(".login-box").style.display = "block";
+  }, 500); 
 }
 
 document.getElementById("forgotPasswordForm").addEventListener("submit", function (e) {
@@ -330,29 +350,39 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
   const email = emailInput.value;
   const messageBox = document.getElementById("forgotMessageBox");
 
-  if (email.trim() === "") {
-    messageBox.innerText = "Please enter an email.";
-    messageBox.style.color = "";
-  } else if (email === "durgeshpawar883@gmail.com" ||
-    email === "abhijadhav555@gmail.com" || email === "neetamore779@gmail.com") {
-    messageBox.innerText = "Password reset successful. Please check your email.";
-    messageBox.style.color = "green";
-    emailInput.value = "";
+  const loader = document.getElementById("fullscreenLoader");
+  loader.classList.add("active");
 
+  setTimeout(() => {
+    loader.classList.remove("active");
 
-    setTimeout(() => {
-      messageBox.innerText = "";
-    }, 3000);
-  } else {
-    messageBox.innerText = "Email not registered";
-    messageBox.style.color = "red";
-    emailInput.value = "";
+    if (email.trim() === "") {
+      messageBox.innerText = "Please enter an email.";
+      messageBox.style.color = "";
+    } else if (
+      email === "durgeshpawar883@gmail.com" ||
+      email === "abhijadhav555@gmail.com" ||
+      email === "neetamore779@gmail.com"
+    ) {
+      messageBox.innerText = "Password reset successful. Please check your email.";
+      messageBox.style.color = "green";
+      emailInput.value = "";
 
-    setTimeout(() => {
-      messageBox.innerText = "";
-    }, 3000);
-  }
+      setTimeout(() => {
+        messageBox.innerText = "";
+      }, 3000);
+    } else {
+      messageBox.innerText = "Email not registered";
+      messageBox.style.color = "red";
+      emailInput.value = "";
+
+      setTimeout(() => {
+        messageBox.innerText = "";
+      }, 3000);
+    }
+  }, 500); 
 });
+
 window.addEventListener("pageshow", function (event) {
   const isHistoryNav = event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward";
   if (isHistoryNav) {
@@ -431,4 +461,5 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
