@@ -1358,18 +1358,6 @@ footer a:hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.login-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(to right, #007bff, #ffa000);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
 .login-box h2 {
   text-align: center;
   margin-bottom: 20px;
@@ -1720,6 +1708,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
