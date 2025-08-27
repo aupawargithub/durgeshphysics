@@ -398,25 +398,34 @@ window.addEventListener("pageshow", function (event) {
 });
 
 (function () {
-  const loginBox = document.querySelector('.login-box');
-  if (!loginBox) return;
+  const loginBoxes = document.querySelectorAll('.login-box');
+  if (!loginBoxes.length) return;
 
-  const inputs = loginBox.querySelectorAll('input');
+  loginBoxes.forEach(box => {
+    const inputs = box.querySelectorAll('input');
 
-  inputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      if (window.innerWidth <= 768) {
-        loginBox.style.transform = 'translateY(-20%)';
-      }
-    });
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        if (window.innerWidth <= 768) {
+         
+          setTimeout(() => {
+            input.scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+          }, 300); 
+        }
+      });
 
-    input.addEventListener('blur', () => {
-      if (window.innerWidth <= 768) {
-        loginBox.style.transform = 'translateY(0)';
-      }
+      input.addEventListener('blur', () => {
+        if (window.innerWidth <= 768) {
+          box.style.transform = 'translateY(0)';
+        }
+      });
     });
   });
 })();
+
 function toggleDropdown(selectEl) {
 
   const allSelects = document.querySelectorAll('.custom-select');
@@ -468,6 +477,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
