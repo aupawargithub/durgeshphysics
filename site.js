@@ -402,18 +402,14 @@ window.addEventListener("pageshow", function (event) {
   if (!loginBoxes.length) return;
 
   loginBoxes.forEach(box => {
-    const inputs = box.querySelectorAll('input');
+    box.querySelectorAll('input').forEach(input => {
 
-    inputs.forEach(input => {
       input.addEventListener('focus', () => {
         if (window.innerWidth <= 768) {
-         
+        
           setTimeout(() => {
-            input.scrollIntoView({
-              behavior: "smooth",
-              block: "center"
-            });
-          }, 300); 
+            input.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 300);
         }
       });
 
@@ -422,6 +418,7 @@ window.addEventListener("pageshow", function (event) {
           box.style.transform = 'translateY(0)';
         }
       });
+
     });
   });
 })();
@@ -477,6 +474,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
