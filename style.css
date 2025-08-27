@@ -1497,7 +1497,7 @@ a#forgotPasswordLink:hover {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  backdrop-filter: blur(3px);
+ 
 }
 
 #fullscreenLoader.active {
@@ -1710,6 +1710,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
