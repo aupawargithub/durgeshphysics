@@ -331,6 +331,9 @@ document.getElementById("forgotPasswordLink").addEventListener("click", function
     loader.classList.remove("active");
     document.querySelector(".login-box").style.display = "none";
     document.getElementById("forgotPasswordBox").style.display = "block";
+
+    document.getElementById("loginForm").reset();
+    document.getElementById("messageBox").textContent = "";
   }, 500); 
 });
 
@@ -465,6 +468,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
