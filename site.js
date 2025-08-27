@@ -398,27 +398,22 @@ window.addEventListener("pageshow", function (event) {
 });
 
 (function () {
-  const loginBoxes = document.querySelectorAll('.login-box');
-  if (!loginBoxes.length) return;
+  const loginBox = document.querySelector('.login-box');
+  if (!loginBox) return;
 
-  loginBoxes.forEach(box => {
-    box.querySelectorAll('input').forEach(input => {
+  const inputs = loginBox.querySelectorAll('input');
 
-      input.addEventListener('focus', () => {
-        if (window.innerWidth <= 768) {
-        
-          setTimeout(() => {
-            input.scrollIntoView({ behavior: "smooth", block: "center" });
-          }, 300);
-        }
-      });
+  inputs.forEach(input => {
+    input.addEventListener('focus', () => {
+      if (window.innerWidth <= 768) {
+        loginBox.style.transform = 'translateY(-30%)';
+      }
+    });
 
-      input.addEventListener('blur', () => {
-        if (window.innerWidth <= 768) {
-          box.style.transform = 'translateY(0)';
-        }
-      });
-
+    input.addEventListener('blur', () => {
+      if (window.innerWidth <= 768) {
+        loginBox.style.transform = 'translateY(0)';
+      }
     });
   });
 })();
@@ -474,6 +469,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
