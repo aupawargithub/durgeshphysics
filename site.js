@@ -406,7 +406,7 @@ window.addEventListener("pageshow", function (event) {
   inputs.forEach(input => {
     input.addEventListener('focus', () => {
       if (window.innerWidth <= 768) {
-        loginBox.style.transform = 'translateY(-30%)';
+        loginBox.style.transform = 'translateY(-40%)';
       }
     });
 
@@ -469,6 +469,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
