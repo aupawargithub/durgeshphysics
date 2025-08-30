@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-store" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <title>DURGESH PHYSICS - Student Dashboard</title>
-<link rel="icon" type="image/png" sizes="32x32" href="../images/logo.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
-<link rel="manifest" href="../manifest.json">
-<meta name="theme-color" content="#ffffff">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="DurgeshPhysics">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="DurgeshPhysics">
 
   <style>
     * {
@@ -33,154 +31,161 @@
       color: #333;
     }
 
-header {
-  background: linear-gradient(to right, #283593, #64b5f6);
-  color: #fff;
-  padding: 12px 16px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  z-index: 999;
- transition: opacity 0.3s ease;
-}
+    header {
+      background: linear-gradient(to right, #283593, #64b5f6);
+      color: #fff;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: opacity 0.3s ease;
+    }
 
 
-.title-box h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 1.6rem;
-  line-height: 1.2;
-}
+    .title-box h1 {
+      margin: 0;
+      text-align: center;
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
 
-.title-box .main-title {
-  font-weight: bold;
-}
+    .title-box .main-title {
+      font-weight: bold;
+    }
 
-.title-box .subheading {
-  font-size: 1rem;
-  color: #e0f7fa;
-  }
-.header-bottom {
-  margin-top: 8px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
+    .title-box .subheading {
+      font-size: 1rem;
+      color: #e0f7fa;
+    }
+
+    .header-bottom {
+      margin-top: 8px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
 
 
-.left-info {
-  text-align: left;
-  font-size: 0.85rem;
-}
+    .left-info {
+      text-align: left;
+      font-size: 0.85rem;
+    }
 
-.left-info p {
-  margin: 2px 0;
-} 
- .hidden {
-  opacity: 0;
-  pointer-events: none;
-} 
-.logout-btn {
-  background: #d32f2f;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 15px;
-  cursor: pointer;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
-   -webkit-tap-highlight-color: transparent;
-}
+    .left-info p {
+      margin: 2px 0;
+    }
 
-.logout-btn:hover {
-  background-color: #b71c1c;
-  transform: translateY(-3px);
- box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-@media (max-width: 480px) {
-  .title-box h1 {
-    font-size: 1.4rem;
-  }
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
 
-  .title-box .subheading {
-    font-size: 1.0rem;
-   
-  }
+    .logout-btn {
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-  .left-info {
-    font-size: 0.75rem;
-  }
+    .logout-btn:hover {
+      background-color: #b71c1c;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
 
-  .logout-Btn {
-    padding: 6px 11px;
-    font-size: 0.9rem;
-  }
-}
+    @media (max-width: 480px) {
+      .title-box h1 {
+        font-size: 1.4rem;
+      }
 
-.compact-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to right, #283593, #64b5f6);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 24px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
-}
+      .title-box .subheading {
+        font-size: 1.0rem;
 
-.compact-header.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-.compact-title {
-  font-size: 24px;
-  font-weight: bold;
-	white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-}
-.container {
+      }
+
+      .left-info {
+        font-size: 0.75rem;
+      }
+
+      .logout-Btn {
+        padding: 6px 11px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .compact-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to right, #283593, #64b5f6);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .compact-header.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .compact-title {
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+
+    .container {
       max-width: 1000px;
-     margin: auto;
+      margin: auto;
       padding: 20px;
-     background-color: #f4f6f8; 
-     }
+      background-color: #f4f6f8;
+    }
 
     .section {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 32px; 
-       border: 1px solid #cfd8dc;
-       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-      overflow: hidden; 
-}
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 32px;
+      border: 1px solid #cfd8dc;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
 
-  .section:hover {
-  transform: translateY(-4px);
-  box-shadow:  0 10px 30px rgba(0, 0, 0, 0.2);
-}
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
     .section h2 {
       font-size: 20px;
       color: #283593;
       margin-bottom: 10px;
       border-bottom: 2px solid #c5cae9;
       padding-bottom: 6px;
-       text-align: center;
+      text-align: center;
     }
 
     .info-grid {
@@ -196,7 +201,7 @@ header {
     }
 
     .info-item strong {
-    display: inline-block;
+      display: inline-block;
       color: #555;
       margin-bottom: 4px;
     }
@@ -207,134 +212,137 @@ header {
     }
 
     .download-btn {
-  display: inline-block;
-  text-decoration: none;
-  background: linear-gradient(135deg, #4caf50, #2e7d32);
-  color: #fff;
-  border: none;
-  padding: 12px 24px;
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  border-radius: 999px;
-  cursor: pointer;
-  margin-top: 16px;
-  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
-   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
-  position: relative;
-  overflow: hidden;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-}
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #4caf50, #2e7d32);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      border-radius: 999px;
+      cursor: pointer;
+      margin-top: 16px;
+      box-shadow: 0 6px 16px rgba(46, 125, 50, 0.25);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
 
-.download-btn:hover {
-  background: linear-gradient(135deg, #43a047, #1b5e20);
-  transform: translateY(-3px);
-  box-shadow:  0 10px 30px rgba(0, 0, 0, 0.2);
-}
+    .download-btn:hover {
+      background: linear-gradient(135deg, #43a047, #1b5e20);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
 
-.download-btn:active {
-  transform: translateY(-3px);
-  box-shadow:  0 10px 30px rgba(0, 0, 0, 0.2);
-}
+    .download-btn:active {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
 
-  
+
     .profile-row {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 24px;
-  flex-wrap: wrap;
-}
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
 
-.profile-upload {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
-  flex-shrink: 0;
-}
+    .profile-upload {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      flex-shrink: 0;
+    }
 
-.profile-upload img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .profile-upload img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.upload-icon {
-  position: absolute;
- bottom: 8px;      
-  right: 8px;
-  background-color: #007bff;
-  color: white;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid white;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 2;
-}
+    .upload-icon {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background-color: #007bff;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 2;
+    }
 
-.profile-upload input[type="file"] {
-  display: none;
-}
+    .profile-upload input[type="file"] {
+      display: none;
+    }
 
-.info-grid {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px;
-}
+    .info-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
 
 
-@media (max-width: 768px) {
-  .profile-row {
-    flex-direction: column;
-    align-items: center;
-  }
+    @media (max-width: 768px) {
+      .profile-row {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .info-grid {
-    width: 100%;
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+      .info-grid {
+        width: 100%;
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
 
-  .info-item {
-    width: 100%;
-  }
-}
-footer {
-        background: linear-gradient(135deg, #64b5f6 0%, #283593 100%);
+      .info-item {
+        width: 100%;
+      }
+    }
+
+    footer {
+      background: linear-gradient(135deg, #64b5f6 0%, #283593 100%);
       color: white;
       text-align: center;
       padding: 20px;
       font-size: 14px;
-      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); 
-	     z-index: 1000;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
     }
- footer a {
+
+    footer a {
       color: white;
       transition: all 0.3s ease;
       display: inline-block;
     }
 
     footer a:hover {
-        color: #1e88e5;
+      color: #1e88e5;
       transform: translateY(-2px);
     }
   </style>
 </head>
+
 <body>
- <div id="loadingScreen" style="
+  <div id="loadingScreen" style="
     position: fixed;
     top: 0;
     left: 0;
@@ -370,53 +378,58 @@ footer {
       ">Loading DURGESH PHYSICS...</p>
     </div>
   </div>
-  
+
   <style>
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
 
-  <header id= "full-header">
-   <div class="title-box">
-    <h1>
-      <span class="main-title">DURGESH PHYSICS</span><br>
-      <span class="subheading">Student Dashboard</span>
-    </h1>
-  </div>
-  <div class="header-bottom">
-    <div class="left-info">
-      <p id="welcome">Logged in as admin: abhijadhav555@gmail.com</p>
-      
+  <header id="full-header">
+    <div class="title-box">
+      <h1>
+        <span class="main-title">DURGESH PHYSICS</span><br>
+        <span class="subheading">Student Dashboard</span>
+      </h1>
     </div>
-    <button class="logout-btn" id="logoutBtn">Logout</button>
+    <div class="header-bottom">
+      <div class="left-info">
+        <p id="welcome">Logged in as admin: abhijadhav555@gmail.com</p>
+
+      </div>
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+  <div id="compact-header" class="compact-header">
+    <span class="compact-title">DURGESH PHYSICS</span>
   </div>
-</header>
-<div id="compact-header" class="compact-header">
-  <span class="compact-title">DURGESH PHYSICS</span>
-</div>
 
   <div class="container">
     <div class="section">
       <h2>Personal Information</h2>
       <div class="profile-row">
-   
-    <div class="profile-upload">
-    
-        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="profilePic" alt="Profile Photo">
-         <label for="uploadPic" class="upload-icon">+</label>
-      </label>
-      <input type="file" accept="image/*" id="uploadPic" onchange="loadProfileImage(event)">
-    </div>
-      <div class="info-grid">
-        <div class="info-item"><strong>Student ID:</strong> DP140</div>
-        <div class="info-item"><strong>Name:</strong> Neeta More</div>
-        <div class="info-item"><strong>Standard:</strong> 12th</div>
-        <div class="info-item"><strong>Batch:</strong> NEET 2025</div>
-        <div class="info-item"><strong>Mobile No.:</strong> 9745988527</div>
-        <div class="info-item"><strong>Email:</strong> neetamore779@gmail.com</div>
-        
+
+        <div class="profile-upload">
+
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="profilePic" alt="Profile Photo">
+          <label for="uploadPic" class="upload-icon">+</label>
+          </label>
+          <input type="file" accept="image/*" id="uploadPic" onchange="loadProfileImage(event)">
+        </div>
+        <div class="info-grid">
+          <div class="info-item"><strong>Student ID:</strong> DP140</div>
+          <div class="info-item"><strong>Name:</strong> Neeta More</div>
+          <div class="info-item"><strong>Standard:</strong> 12th</div>
+          <div class="info-item"><strong>Batch:</strong> NEET 2025</div>
+          <div class="info-item"><strong>Mobile No.:</strong> 9745988527</div>
+          <div class="info-item"><strong>Email:</strong> neetamore779@gmail.com</div>
+
         </div>
       </div>
     </div>
@@ -424,18 +437,18 @@ footer {
     <div class="section">
       <h2>Monthly Marks</h2>
       <div class="info-grid">
-        <div class="info-item"><strong>May:</strong> 79/100</div>
-        <div class="info-item"><strong>June:</strong> 88/100</div>
-	<div class="info-item"><strong>July:</strong> 83/100</div>
+        <div class="info-item"><strong>June:</strong> 79/100</div>
+        <div class="info-item"><strong>July:</strong> 83/100</div>
+        <div class="info-item"><strong>August:</strong> 88/100</div>
       </div>
     </div>
 
     <div class="section">
       <h2>Attendance</h2>
       <div class="info-grid">
-       <div class="info-item"><strong>May:</strong> 85%</div>
-        <div class="info-item"><strong>June:</strong> 92%</div>
+        <div class="info-item"><strong>June:</strong> 85%</div>
         <div class="info-item"><strong>July:</strong> 90%</div>
+        <div class="info-item"><strong>August:</strong> 92%</div>
       </div>
     </div>
 
@@ -445,140 +458,136 @@ footer {
       <a href="../Durgesh_Physics_Notes.pdf" download class="download-btn">Download</a>
     </div>
   </div>
-<footer style="background: linear-gradient(135deg, #64b5f6 0%, #283593 100%); color: white; text-align: center; padding: 12px 5px; font-size: 14px; box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); line-height: 1.6;">
-  <div style="margin-bottom: 7px;">
+  <footer
+    style="background: linear-gradient(135deg, #64b5f6 0%, #283593 100%); color: white; text-align: center; padding: 12px 5px; font-size: 14px; box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); line-height: 1.6;">
+    <div style="margin-bottom: 7px;">
       Follow us on:
-      <a href="mailto:durgeshpawar883@gmail.com" style="color: white; margin: 0 6px; text-decoration: none;" title="Email">
+      <a href="mailto:durgeshpawar883@gmail.com" style="color: white; margin: 0 6px; text-decoration: none;"
+        title="Email">
         <i class="fas fa-envelope" style="font-size: 17px;"></i>
       </a>
-      <a href="https://www.youtube.com/@durgeshpawarphysics" target="_blank" style="color: white; margin: 0 6px; text-decoration: none;" title="YouTube">
+      <a href="https://www.youtube.com/@durgeshpawarphysics" target="_blank"
+        style="color: white; margin: 0 6px; text-decoration: none;" title="YouTube">
         <i class="fab fa-youtube" style="font-size: 17px;"></i>
       </a>
-      <a href="https://wa.me/917499668944" target="_blank" style="color: white; margin: 0 6px; text-decoration: none;" title="WhatsApp">
+      <a href="https://wa.me/917499668944" target="_blank" style="color: white; margin: 0 6px; text-decoration: none;"
+        title="WhatsApp">
         <i class="fab fa-whatsapp" style="font-size: 17px;"></i>
       </a>
-	  <a href="https://www.instagram.com/yourusername" target="_blank" style="color: white; margin: 0 6px; text-decoration: none;" title="Instagram">
-  <i class="fab fa-instagram" style="font-size: 17px;"></i>
-</a>
+      <a href="https://www.instagram.com/yourusername" target="_blank"
+        style="color: white; margin: 0 6px; text-decoration: none;" title="Instagram">
+        <i class="fab fa-instagram" style="font-size: 17px;"></i>
+      </a>
     </div>
-	   <div>Terms & Conditions | Privacy Policy</div>
+    <div>Terms & Conditions | Privacy Policy</div>
     <div>&copy; 2025 DURGESH PHYSICS | All Rights Reserved</div>
-  </div>
-</footer>
+    </div>
+  </footer>
   <script>
-    
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
-    window.location.reload();
-  }
-});
 
-
-sessionStorage.setItem("visitedFromDashboard", "true");
-
-
-const isLoggedIn = localStorage.getItem("loggedIn") === "true" || sessionStorage.getItem("loggedIn") === "true";
-const userEmail = localStorage.getItem("userEmail") || sessionStorage.getItem("userEmail");
-const role = localStorage.getItem("role") || sessionStorage.getItem("role");
-
-
-if (!isLoggedIn || (role !== "student" && role !== "admin")){
-
-  window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
-} else {
-  
-  const welcome = document.getElementById("welcome");
-  if (welcome) {
-    welcome.innerText = `Logged in as student: ${userEmail}`;
-  }
-}
-
-document.getElementById("logoutBtn").addEventListener("click", () => {
-  const loadingScreen = document.getElementById("loadingScreen");
-  if (loadingScreen) {
-    loadingScreen.style.display = "flex";
-    loadingScreen.style.opacity = "1";
-  }
-
-  setTimeout(() => {
-    
-    localStorage.clear();
-    sessionStorage.clear();
-
-    history.go(-1);
-
-    setTimeout(() => {
-      if (window.location.pathname.includes("student02.html")) {
-        window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+        window.location.reload();
       }
-    }, 500);
-  }, 500); 
-});
+    });
 
-let inactivityTimeout;
-const AUTO_LOGOUT_TIME = 5 * 60 * 1000; 
 
-function resetInactivityTimer() {
-  clearTimeout(inactivityTimeout);
-  inactivityTimeout = setTimeout(() => {
-    const loadingScreen = document.getElementById("loadingScreen");
-    if (loadingScreen) {
-      loadingScreen.style.display = "flex";
-      loadingScreen.style.opacity = "1";
-    }
+    sessionStorage.setItem("visitedFromDashboard", "true");
 
-    setTimeout(() => {
-      localStorage.clear();
-      sessionStorage.clear();
+
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true" || sessionStorage.getItem("loggedIn") === "true";
+    const userEmail = localStorage.getItem("userEmail") || sessionStorage.getItem("userEmail");
+    const role = localStorage.getItem("role") || sessionStorage.getItem("role");
+
+
+    if (!isLoggedIn || (role !== "student" && role !== "admin")) {
 
       window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
-    }, 500);
-  }, AUTO_LOGOUT_TIME);
-}
+    } else {
 
-["click", "mousemove", "keypress", "scroll", "touchstart"].forEach(evt => {
-  window.addEventListener(evt, resetInactivityTimer, false);
-});
+      const welcome = document.getElementById("welcome");
+      if (welcome) {
+        welcome.innerText = `Logged in as student: ${userEmail}`;
+      }
+    }
 
-resetInactivityTimer();
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      const loadingScreen = document.getElementById("loadingScreen");
+      if (loadingScreen) {
+        loadingScreen.style.display = "flex";
+        loadingScreen.style.opacity = "1";
+      }
 
-function loadProfileImage(event) {
-    const image = document.getElementById('profilePic');
-    image.src = URL.createObjectURL(event.target.files[0]);
-  }
-    document.addEventListener("DOMContentLoaded", () => {
-  const fullHeader = document.getElementById("full-header");
-  const compactHeader = document.getElementById("compact-header");
-
-  if (fullHeader && compactHeader) {
-    window.addEventListener("scroll", () => {
-      const showCompact = window.scrollY > 100;
-      compactHeader.classList.toggle("visible", showCompact);
-      fullHeader.classList.toggle("hidden", showCompact);
-    });
-  }
-});
-	document.addEventListener("DOMContentLoaded", () => {
-  const loadingScreen = document.getElementById('loadingScreen');
-  if (loadingScreen) {
-    setTimeout(() => {
-      loadingScreen.style.opacity = '0';
       setTimeout(() => {
-        loadingScreen.style.display = "none";
+
+        localStorage.clear();
+        sessionStorage.clear();
+
+        history.go(-1);
+
+        setTimeout(() => {
+          if (window.location.pathname.includes("student02.html")) {
+            window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+          }
+        }, 500);
       }, 500);
-    }, 800);
-  }
-});
-</script>
+    });
+
+    let inactivityTimeout;
+    const AUTO_LOGOUT_TIME = 5 * 60 * 1000;
+
+    function resetInactivityTimer() {
+      clearTimeout(inactivityTimeout);
+      inactivityTimeout = setTimeout(() => {
+        const loadingScreen = document.getElementById("loadingScreen");
+        if (loadingScreen) {
+          loadingScreen.style.display = "flex";
+          loadingScreen.style.opacity = "1";
+        }
+
+        setTimeout(() => {
+          localStorage.clear();
+          sessionStorage.clear();
+
+          window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+        }, 500);
+      }, AUTO_LOGOUT_TIME);
+    }
+
+    ["click", "mousemove", "keypress", "scroll", "touchstart"].forEach(evt => {
+      window.addEventListener(evt, resetInactivityTimer, false);
+    });
+
+    resetInactivityTimer();
+
+    function loadProfileImage(event) {
+      const image = document.getElementById('profilePic');
+      image.src = URL.createObjectURL(event.target.files[0]);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const fullHeader = document.getElementById("full-header");
+      const compactHeader = document.getElementById("compact-header");
+
+      if (fullHeader && compactHeader) {
+        window.addEventListener("scroll", () => {
+          const showCompact = window.scrollY > 100;
+          compactHeader.classList.toggle("visible", showCompact);
+          fullHeader.classList.toggle("hidden", showCompact);
+        });
+      }
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const loadingScreen = document.getElementById('loadingScreen');
+      if (loadingScreen) {
+        setTimeout(() => {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = "none";
+          }, 500);
+        }, 800);
+      }
+    });
+  </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
