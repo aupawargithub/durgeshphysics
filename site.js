@@ -31,18 +31,18 @@ function toggleMenu(source = 'main') {
       navLinks.style.top = `${rect.bottom}px`;
       navLinks.classList.add("prevent-scroll");
     } else {
-      navLinks.style.position = ''; // reset to CSS (absolute with top: 100%)
+      navLinks.style.position = ''; 
       navLinks.style.top = '';
     }
   } else {
 
     navLinks.classList.remove("prevent-scroll");
-    // Wait for the transition (400ms) before hiding completely
+    
     setTimeout(() => {
       navLinks.classList.add("mobile-hidden");
       navLinks.style.top = '';
       navLinks.style.position = '';
-    }, 400); // Match CSS transition time
+    }, 400); 
 
     clickedToggle.classList.remove("open");
     navLinks.classList.remove("prevent-scroll");
@@ -80,7 +80,6 @@ function handleContactForm(event) {
       isValid = false;
       field.classList.add("input-error");
 
-      // For custom dropdowns: show message inside the visible element
       if (isHiddenInput && parent) {
         const selected = parent.querySelector('.selected');
         selected.classList.add("input-error");
@@ -95,7 +94,6 @@ function handleContactForm(event) {
         const selected = parent.querySelector('.selected');
         selected.classList.remove("input-error");
 
-        // Restore selected label if input is valid
         selected.textContent = field.value;
       }
     }
@@ -255,7 +253,6 @@ togglePassword.addEventListener("click", () => {
   const isPassword = passwordInput.getAttribute("type") === "password";
   passwordInput.setAttribute("type", isPassword ? "text" : "password");
 
-  // Toggle the icon class
   togglePassword.classList.toggle("fa-eye");
   togglePassword.classList.toggle("fa-eye-slash");
 });
@@ -469,6 +466,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
