@@ -1454,7 +1454,13 @@ transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   text-align: center;
   margin-top: 15px;
 }
-
+.forgot-text{
+font-size: 21px;
+font-weight: 600;
+color: #1a237e;
+text-align: center;
+margin-bottom: 30px;
+}
 .password-container {
   position: relative;
 }
@@ -1529,11 +1535,9 @@ a#forgotPasswordLink:hover {
   top: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(-30px);
-  /* start above */
   z-index: 9999;
   display: flex;
   justify-content: center;
-  /* center horizontally */
   align-items: center;
   background: linear-gradient(to right, #00b09b, #96c93d);
   color: #fff;
@@ -1710,6 +1714,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
