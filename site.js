@@ -384,7 +384,7 @@ document.getElementById("forgotPasswordForm").addEventListener("submit", functio
         messageBox.innerText = "";
       }, 3000);
     }
-  }, 500); 
+  }, 1500); 
 });
 
 window.addEventListener("pageshow", function (event) {
@@ -466,6 +466,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
