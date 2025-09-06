@@ -1432,12 +1432,11 @@ transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 .login-box button:hover {
   background: linear-gradient(135deg, #0d47a1, #1565c0);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .login-box button:active {
-  transform: scale(0.98);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
 .close-btn {
@@ -1715,6 +1714,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
