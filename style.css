@@ -1351,7 +1351,7 @@ footer a:hover {
   padding: 30px;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #cfd8dc;
   width: 300px;
   position: relative;
@@ -1714,6 +1714,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
