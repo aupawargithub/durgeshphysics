@@ -1597,25 +1597,6 @@ a#forgotPasswordLink:hover {
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
-.toast-bar {
-  height: 4px;
-  background: rgba(255, 255, 255, 0.6);
-  margin-top: 10px;
-  border-radius: 2px;
-  width: 0%;
-  animation: none;
-}
-
-@keyframes toast-timer {
-  from {
-    width: 0%;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
 
 @media (max-width: 480px) {
   #toast {
@@ -1724,6 +1705,7 @@ a#forgotPasswordLink:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
 
 
 
