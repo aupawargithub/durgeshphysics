@@ -102,20 +102,19 @@ function handleContactForm(event) {
   if (!isValid) {
     return;
   }
-  const toast = document.getElementById("toast");
-  const toastBar = toast?.querySelector(".toast-bar");
+ const toast = document.getElementById("toast");
 
-  if (toast && toastBar) {
+  if (toast) {
     toast.style.display = "block";
     toast.classList.remove("fade-active", "fade-out");
     void toast.offsetWidth;
+
     toast.classList.add("fade-active");
-    toastBar.style.animation = "none";
-    void toastBar.offsetHeight;
-    toastBar.style.animation = "toast-timer 3s linear forwards";
+
     setTimeout(() => {
       toast.classList.remove("fade-active");
       toast.classList.add("fade-out");
+
       setTimeout(() => {
         toast.style.display = "none";
         toast.classList.remove("fade-out");
@@ -123,6 +122,7 @@ function handleContactForm(event) {
     }, 3200);
   }
   form.reset();
+  
   form.querySelectorAll('.custom-select').forEach(select => {
     const selected = select.querySelector('.selected');
     const hiddenInput = select.querySelector('input[type="hidden"]');
@@ -469,6 +469,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
