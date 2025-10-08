@@ -102,28 +102,38 @@ function handleContactForm(event) {
   if (!isValid) {
     return;
   }
- const toast = document.getElementById("toast");
+const toast = document.getElementById("toast");
+  const loader = document.getElementById("loader");
 
-  if (toast) {
-    toast.style.display = "block";
-    toast.classList.remove("fade-active", "fade-out");
-    void toast.offsetWidth;
+  loader.style.display = "flex";
 
-    toast.classList.add("fade-active");
+  setTimeout(() => {
 
-    setTimeout(() => {
-      toast.classList.remove("fade-active");
-      toast.classList.add("fade-out");
+    loader.style.display = "none";
+
+   if (toast) {
+      toast.style.display = "block";
+      toast.classList.remove("fade-active", "fade-out");
+
+      void toast.offsetWidth;
+
+      toast.classList.add("fade-active");
 
       setTimeout(() => {
-        toast.style.display = "none";
-        toast.classList.remove("fade-out");
-      }, 400);
-    }, 3200);
-  }
-  form.reset();
-  
-  form.querySelectorAll('.custom-select').forEach(select => {
+        toast.classList.remove("fade-active");
+        toast.classList.add("fade-out");
+
+        setTimeout(() => {
+          toast.style.display = "none";
+          toast.classList.remove("fade-out");
+        }, 400);
+      }, 3200);
+    }
+  }, 1000);
+
+ form.reset();
+
+ form.querySelectorAll('.custom-select').forEach(select => {
     const selected = select.querySelector('.selected');
     const hiddenInput = select.querySelector('input[type="hidden"]');
 
@@ -469,6 +479,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
