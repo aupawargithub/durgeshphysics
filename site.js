@@ -187,25 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const fullHeader = document.getElementById("full-header");
   const compactHeader = document.getElementById("compact-header");
 
-  let initialViewportHeight = window.innerHeight;
-  let keyboardVisible = false;
-
-  window.addEventListener("resize", () => {
-    const heightDiff = initialViewportHeight - window.innerHeight;
-
-    if (heightDiff > 150) {
-     
-      keyboardVisible = true;
-    } else {
-      
-      keyboardVisible = false;
-    }
-  });
-
   if (fullHeader && compactHeader) {
     window.addEventListener("scroll", () => {
-      if (keyboardVisible) return; 
-
       const showCompact = window.scrollY > 100;
       compactHeader.classList.toggle("visible", showCompact);
       fullHeader.classList.toggle("hidden", showCompact);
@@ -497,6 +480,7 @@ document.addEventListener('click', function (e) {
     }
   });
 });
+
 
 
 
