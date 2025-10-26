@@ -556,18 +556,24 @@
     position: fixed;
     top: 15px;
     left: 15px;
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    color: white;
+    width: 40px;             
+    height: 40px;
+     background: linear-gradient(135deg, #764ba2, #667eea);
+     color: white;           
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
+    display: flex;              
+    justify-content: center;    
+    align-items: center;       
+    font-size: 22px;            
     font-weight: bold;
+    line-height: 1;             
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     z-index: 1001;
     transition: all 0.3s ease;
+    outline: none;
+  -webkit-tap-highlight-color: transparent;          
 }
 
 .back-button:hover {
@@ -1144,5 +1150,6 @@ function goBack() {
 </body>
 
 </html>
+
 
 
