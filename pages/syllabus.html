@@ -551,6 +551,38 @@
             background: linear-gradient(135deg, #0056b3, #4a148c);
             transform: scale(1.15);
         }
+
+     .back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 40px;             
+    height: 40px;
+     background: linear-gradient(135deg, #764ba2, #667eea);
+     color: white;           
+    border: none;
+    border-radius: 50%;
+    display: flex;              
+    justify-content: center;    
+    align-items: center;       
+    font-size: 22px;            
+    font-weight: bold;
+    line-height: 1;             
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    transition: all 0.3s ease;
+    outline: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: scale(1.1);
+}
+
+
     </style>
 </head>
 
@@ -603,6 +635,10 @@
             }
         }
     </style>
+<!-- Back Button -->
+<button id="backBtn" class="back-button" onclick="goBack()">
+    ⬅
+</button>
 
     <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
 
@@ -1050,6 +1086,7 @@
                 });
             }
         });
+        
         document.addEventListener("DOMContentLoaded", () => {
             const loadingScreen = document.getElementById('loadingScreen');
             if (loadingScreen) {
@@ -1063,9 +1100,59 @@
                 }, 800);
             }
         });
-    </script>
+   
+
+function goBack() {
+    // Create a temporary spinner overlay
+    const spinner = document.createElement('div');
+    spinner.id = 'tempSpinner';
+    spinner.style.position = 'fixed';
+    spinner.style.top = '0';
+    spinner.style.left = '0';
+    spinner.style.width = '100%';
+    spinner.style.height = '100%';
+    spinner.style.background = "linear-gradient(135deg, #283593, #64b5f6)";
+    spinner.style.display = 'flex';
+    spinner.style.justifyContent = 'center';
+    spinner.style.alignItems = 'center';
+    spinner.style.flexDirection = 'column';
+    spinner.style.gap = '20px';
+    spinner.style.zIndex = '9999';
+    spinner.style.opacity = '0';
+    spinner.style.transition = 'opacity 0.4s ease';
+    spinner.innerHTML = `
+        <div style="
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-top: 5px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;">
+        </div>
+        <p style="
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        ">Loading DURGESH PHYSICS...</p>
+    `;
+
+    document.body.appendChild(spinner);
+
+    // Fade in smoothly
+    requestAnimationFrame(() => {
+        spinner.style.opacity = '1';
+    });
+
+    // Redirect after 0.5 seconds
+    setTimeout(() => {
+        window.location.href = "https://aupawargithub.github.io/durgeshphysics/";
+    }, 500);
+}
+</script>
+
 
 </body>
 
 </html>
-
